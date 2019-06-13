@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap.min.css';
+@font-face {
+    font-family: CERA-ROUND-PRO-BOLD;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERA-ROUND-PRO-BOLD.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERA-ROUND-PRO-BOLD.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-BLACK;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-BLACK.OTF")
+        ,url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-BLACK.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-LIGHT;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-LIGHT.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-LIGHT.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-MEDIUM;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-MEDIUM.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-MEDIUM.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-REGULAR;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-REGULAR.OTF")
+        ,url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-REGULAR.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-THIN;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-THIN.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-THIN.eot");
+}
+.title{
+    font-family: CERAROUNDPRO-MEDIUM;
+    color:#0D75B5;
+}
+.title-bold{
+    font-family: CERA-ROUND-PRO-BOLD;
+    color:#0D75B5;
+}
+.outline-button-white{
+    color:#fff;
+    border-color:#fff; 
+}
