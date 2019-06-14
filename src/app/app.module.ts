@@ -8,11 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AvailableRoomComponent } from './available-room/available-room.component';
-import { ProfileComponent } from './profile/profile.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     LoginComponent,
     AvailableRoomComponent,
-    ProfileComponent,
     BookingsComponent,
     FeedbackComponent,
     ContactUsComponent,
-    HomeComponent
+    HomeComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
