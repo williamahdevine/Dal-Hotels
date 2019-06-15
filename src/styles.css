@@ -42,6 +42,14 @@
     color:#fff;
     border-color:#fff; 
 }
+.outline-button-blue{
+    color:#0D75B5;
+    border-color:#0D75B5; 
+}
+.button-blue{
+    background-color: #0D75B5;
+    color:#FFF;
+}
 .p-content{
     font-family: CERAROUNDPRO-LIGHT;
     font-size:14px;

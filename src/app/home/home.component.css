@@ -1,8 +1,48 @@
 .slide{
     margin-top:4%;
-    background-color: #D8D8D8;
-    padding:30px;
+    /* background-color: #D8D8D8; */
+    border-bottom:solid;
+    border-width:1px;
+    border-bottom-color:#999999;
+    background-color: #DAE0E5;
+    padding:50px;
 }
 .bold-slider{
     font-family: CERAROUNDPRO-BLACK !important;
 }
+.search-bar{
+    margin-left:10%;
+    margin-right:10%; 
+    text-align: center;
+}
+.search-padding{
+    padding:25px;
+}
+.title-bold{
+    text-align: center;
+    font-size:70px;
+}
+.m-center{
+    font-size:30px;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .slide{
+        margin-top:10%;
+    }
+    .search-bar{
+        width: 100%;
+        margin: 0;
+    }
+    .title-bold{
+        text-align: center;
+        font-size:17px;
+    }
+    .m-center{
+        font-size:12px;
+        text-align: center;
+    }
+    .search-padding{
+        padding:5px;
+    }
+  }
