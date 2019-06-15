@@ -1,9 +1,9 @@
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AvailableRoomComponent } from './available-room/available-room.component';
-import { ProfileComponent } from './profile/profile.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
