@@ -23,3 +23,8 @@ img.logo{
         text-align: center;
     }
   }
+  @media only screen and (max-width: 390px) {
+    img.logo{
+        width:50%;
+    }
+}
