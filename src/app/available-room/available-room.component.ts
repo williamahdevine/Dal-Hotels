@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import data from './rooms.json';
 
 @Component({
   selector: 'app-available-room',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvailableRoomComponent implements OnInit {
 
-  constructor() { }
+	rooms: Room[] = data;
 
-  ngOnInit() {
-  }
+
+	// randomNumImg: string = ( ( Math.floor(Math.random())) + 1  )  + '.jpg';
+
+	constructor() { }
+
+	ngOnInit() {
+	}
+
+	genRandomNum() {
+	    return Math.floor(Math.random() * 6) + 1 ;
+	}
 
 }
