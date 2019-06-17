@@ -1,0 +1,82 @@
+.slide{
+    margin-top:4%;
+    /* background-color: #D8D8D8; */
+    /* border-bottom:solid;
+    border-width:1px;
+    border-bottom-color:#999999; */
+    background-color: #DAE0E5;
+    padding:100px;
+}
+.bold-slider{
+    font-family: CERAROUNDPRO-BLACK !important;
+}
+.search-bar{
+    margin-left:10%;
+    margin-right:10%; 
+    text-align: center;
+}
+.search-padding{
+    padding:25px;
+}
+.slider-header{
+    text-align: center;
+    font-size:70px;
+}
+.m-center{
+    font-size:30px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .slide{
+        margin-top:14%;
+        padding:20px;
+    }
+    .search-bar{
+        width: 100%;
+        margin: 0;
+    }
+    .slider-header{
+        text-align: center;
+        font-size:17px;
+    }
+    .m-center{
+        font-size:12px;
+        text-align: center;
+    }
+    .search-padding{
+        padding:5px;
+    }
+    .banner-btn{
+        margin-top:3% !important;
+    }
+  }
+  .room-header{
+      margin-bottom: 0px !important;
+  }
+  .p-content-room{
+    font-family: CERAROUNDPRO-LIGHT;
+    font-size:12px;
+  }
+  @media only screen and (max-width: 390px) {
+    .slide{
+        margin-top:15%;
+        padding:15px;
+    }
+    .banner-btn{
+        margin-top:1% !important;
+    }
+  }
+  .banner-btn{
+      color:#fff !important;
+      border-color: #fff;
+      padding-left: 30px;
+      padding-right:30px;
+      border-radius: 20px;
+      margin-top:6%;
+  }
+  .banner-btn:hover{
+    color:#00213F !important;
+    border-color: #00213F;
+    background-color: transparent;
+  }
