@@ -1,0 +1,44 @@
+.footer-bg-color{
+    background-color: #DAE0E5 !important;
+}
+.bottom-footer-bg{
+    background-color: #7AA9DA !important;
+}
+.top-footer-bg{
+    
+    /* background-color: #41AEE5; */
+    padding:20px;
+}
+.navbar-brand{
+    color: #fff;
+    text-align: right;
+}
+.bottom-footer{
+    color: #fff;
+    width: 100%;
+    text-align: right;
+    margin:10px;
+    font-family: CERA-ROUND-PRO-BOLD;
+}
+.footer-ui{
+    text-decoration: none;
+}
+.footer-li{
+    color: #0D75B5;
+    font-family: CERAROUNDPRO-MEDIUM;
+    list-style-type:none;
+    text-decoration: none;
+    text-align: center;
+    padding:5px;
+}
+@media only screen and (max-width: 600px) {
+    .bottom-footer{
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+  }
+  .footer-logo{
+    margin-top:5%;
+    width: 100% !important;
+  }

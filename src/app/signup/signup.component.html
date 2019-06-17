@@ -1,0 +1,106 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto">
+
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Register</h3>
+                        </div>
+
+                    <div class="card-body">
+                        <form class="form" name="signUpForm" (ngSubmit)="onSubmit()" #signUpForm="ngForm" >
+
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="name">Name <span class="text-danger">*</span></label>
+                                <input class="signUp form-control form-control-lg rounded-0" type="text"
+                                        [(ngModel)]=model.name name="name"
+                                        required
+                                        placeholder="Bob Sagot"
+                                        #name="ngModel" />
+                                <div [hidden]="name.valid || name.pristine && name.untouched"
+                                     class="alert alert-danger">
+                                  Name is required
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <input class="signUp form-control form-control-lg rounded-0" type="email"
+                                        required
+                                        placeholder="email@email.com"
+                                        name="email" [(ngModel)]=model.email
+                                        [email] = "true"
+                                        #email="ngModel"/>
+                                <div [hidden]="email.valid || email.pristine && email.untouched"
+                                     class="alert alert-danger">
+                                  Enter valid email
+                                </div>
+                            </div>
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label for="phone">Phone <span class="text-danger">*</span></label>
+                                <input class="signUp form-control form-control-lg rounded-0"
+                                        required
+                                        placeholder="888-555-1234"
+                                        name="phone" [(ngModel)]=model.phone
+                                        maxlength="10"
+                                        minlength="10"
+                                        pattern="\d*"
+                                        #phone="ngModel" />
+                                <div [hidden]="phone.valid || phone.pristine && phone.untouched"
+                                     class="alert alert-danger">
+                                  Phone number should be 10 digits
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password">Password <span class="text-danger">*</span></label>
+                                <input class="signUp form-control form-control-lg rounded-0" type="password"
+                                        required
+                                        pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[/\$@$!%*#?&])[A-Za-z\d/\$@$!%*#?&]{8,20}$"
+                                        name="password" [(ngModel)]=model.password
+                                        #password="ngModel"/>
+                                <div [hidden]="password.valid || password.pristine && password.untouched"
+                                     class="alert alert-danger">
+                                     Password must have:
+                                     8-20 characters,
+                                     a capital,
+                                     a number,
+                                     and a special character
+                                </div>
+                            </div>
+
+                            <!-- Password Confirm -->
+                            <div class="form-group">
+                                <label for="passwordConfirm">Password Confirm <span class="text-danger">*</span></label>
+                                <input class="signUp form-control form-control-lg rounded-0" type="password"
+                                        required
+                                        appConfirmEqualValidator="password"
+                                        [disabled]="password.invalid"
+                                        name="passwordConfirm" [(ngModel)]=model.passwordConfirm
+                                        #passwordConfirm="ngModel"/>
+                                <div [hidden]="passwordConfirm.valid || passwordConfirm.pristine || passwordConfirm.error?.notEqual && passwordConfirm.untouched"
+                                     class="alert alert-danger">
+                                     Passwords must match
+                                 </div>
+                             </div>
+                            <!-- Submit Form -->
+                            <div class="mt-3">
+                                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign Up"
+                                        [disabled]="signUpForm.invalid"/>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
