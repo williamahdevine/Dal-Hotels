@@ -42,14 +42,15 @@
                             <!-- Phone -->
                             <div class="form-group">
                                 <label for="phone">Phone <span class="text-danger">*</span></label>
-                                <input class="signUp form-control form-control-lg rounded-0" type="number"
+                                <input class="signUp form-control form-control-lg rounded-0"
                                         required
                                         placeholder="888-555-1234"
                                         name="phone" [(ngModel)]=model.phone
-                                        minlength="10"
                                         maxlength="10"
+                                        minlength="10"
+                                        pattern="\d*"
                                         #phone="ngModel" />
-                                <div [hidden]="phone.valid || phone.pristine"
+                                <div [hidden]="phone.valid || phone.pristine && phone.untouched"
                                      class="alert alert-danger">
                                   Phone number should be 10 digits
                                 </div>
@@ -62,7 +63,7 @@
                                         pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[/\$@$!%*#?&])[A-Za-z\d/\$@$!%*#?&]{8,20}$"
                                         name="password" [(ngModel)]=model.password
                                         #password="ngModel"/>
-                                <div [hidden]="password.valid || password.pristine"
+                                <div [hidden]="password.valid || password.pristine && password.untouched"
                                      class="alert alert-danger">
                                      Password must have:
                                      8-20 characters,
@@ -81,7 +82,7 @@
                                         [disabled]="password.invalid"
                                         name="passwordConfirm" [(ngModel)]=model.passwordConfirm
                                         #passwordConfirm="ngModel"/>
-                                <div [hidden]="passwordConfirm.valid || passwordConfirm.pristine || passwordConfirm.error?.notEqual"
+                                <div [hidden]="passwordConfirm.valid || passwordConfirm.pristine || passwordConfirm.error?.notEqual && passwordConfirm.untouched"
                                      class="alert alert-danger">
                                      Passwords must match
                                  </div>
