@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',

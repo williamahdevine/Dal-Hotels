@@ -119,4 +119,35 @@
 .banner{
     position: relative;
 }
+.top-element{
+margin-top:4%;
+}
+.section-padding{
+    padding-top:60px;
+    padding-bottom: 60px;
+}
+.section-gray{
+    background-color: #F7F7F7;
+}
+
+.img-circle{
+    border-radius: 50%;
+}
+.btn-rounded{
+    padding-left: 30px;
+    padding-right:30px;
+    border-radius: 20px;
+}
+.input-rounded{
+    padding-left: 30px;
+    padding-right:30px;
+    border-radius: 20px !important;
+    font-family: CERAROUNDPRO-LIGHT;
+}
+.btn-color{
+    background-color: #0D75B5;
+    border-color:#0D75B5;
+    color:#fff;
+    font-family: CERAROUNDPRO-LIGHT;
+}
 

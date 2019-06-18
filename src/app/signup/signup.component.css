@@ -1,0 +1,46 @@
+input#reviewDate.ng-invalid-pattern {
+    border: 2px solid red;
+    }
+    input:focus, textarea:focus {
+    outline: none;
+    }
+    
+    input.signUp.ng-invalid.ng-touched {
+    border: 2px solid red;
+    }
+    
+    input.signUp.ng-valid.ng-touched {
+    border: 2px solid green;
+    }
+    
+    input[disabled="disabled"] {
+    opacity: 0.4;
+    cursor: not-allowed!important;
+    }
+    
+    .red {
+    color: red;
+    }
+    small.error {
+    color:red;
+    display:block;
+    text-align:center;
+    }
+    
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .signUp{
+      margin-bottom: 5px;
+    }
+    
+    /* .ng-valid[required], .ng-valid.required  { */
+      /* border-left: 5px solid #42A948; /* green */
+    /* } */
+    
+    /* .ng-invalid:not(form)  { */
+      /* border-left: 5px solid #a94442; /* red */
+    /* } */
+    

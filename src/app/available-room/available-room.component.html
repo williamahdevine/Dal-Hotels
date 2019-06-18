@@ -1,3 +1,28 @@
-<p>
-  available-room works!
-</p>
+<app-search-filter></app-search-filter>
+<section class="section-padding section-gray">
+    <div class="container">
+        <h1 class="text-center">Available Rooms</h1>
+      
+        <div class="row" id="room-list">
+          <div class="col-lg-12 p-3" style="" *ngFor="let room of rooms">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-9">
+                    <h6 class="card-subtitle mb-2 text-muted">{{room.beds}} beds</h6>
+                      <p class="card-text">{{room.size}} room</p>
+                    <p class="card-text">{{room.cost | currency}} Per Night</p>
+                      <a href="" class="card-link" ng-click="viewDetails(room.number)">View Details</a>
+                      <a href="" class="card-link">Book Now</a>
+                  </div>
+                  <div class="col-lg-3" >
+                    <img src="{{room.img}}{{genRandomNum()}}.jpg" alt="{{room.img}}{{genRandomNum()}}.jpg" width="200">
+                  </div>
+                </div>
+                </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+</section>
