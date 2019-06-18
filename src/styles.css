@@ -56,3 +56,36 @@
 .color-gray{
     color:#353535;
 }
+
+
+
+body {
+  background-color: #f1f1f1;
+  margin: 0px;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+
+}
+
+.navbar-default {
+  border-color: #E7E7E7;
+  background: #215280;
+  border: 0px;
+  border-radius: 0px;
+  padding: 20px;
+
+}
+
+.nav .active {
+  background: cadetblue
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
