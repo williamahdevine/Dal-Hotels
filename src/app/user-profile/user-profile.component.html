@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <img src="./assets/dp.jpg" class="img-circle" />
+      <a class="col-sm-12 col-md-4 btn" (click)="this.setEditing()"
+        >Edit Profile</a
+      >
+    </div>
+
+    <hr />
+    <div class="col-sm-12 col-md-8">
+      <h4 class="text-success">{{ this.message }}</h4>
+
+      <form action="">
+        <div class="form-group col-md-8">
+          <label>Firt Name</label>
+          <input
+            [disabled]="this.getEditing()"
+            type="text"
+            class="form-control"
+            value="{{ user.firstName }}"
+          />
+        </div>
+        <div class="form-group col-md-8">
+          <label>Last Name</label>
+          <input
+            [disabled]="this.getEditing()"
+            type="text"
+            class="form-control"
+            value="{{ user.lastName }}"
+          />
+        </div>
+        <div class="form-group col-md-8">
+          <label>Gender</label>
+          <select
+            [disabled]="this.getEditing()"
+            class="form-control"
+            value="{{ user.gender }}"
+          >
+            <option>--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group col-md-8">
+          <label>Phone</label>
+          <input
+            [disabled]="this.getEditing()"
+            type="text"
+            class="form-control"
+            value="{{ user.phone }}"
+          />
+        </div>
+        <div class="form-group col-md-8">
+          <label>Email</label>
+          <input
+            [disabled]="this.getEditing()"
+            type="text"
+            class="form-control"
+            value="{{ user.email }}"
+          />
+        </div>
+
+        <div class="form-group col-md-8">
+          <input
+            [disabled]="this.getEditing()"
+            class="col-md-4 btn btn-outline-primary"
+            type="button"
+            value="submit"
+            (click)="this.saveUser()"
+          />
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
