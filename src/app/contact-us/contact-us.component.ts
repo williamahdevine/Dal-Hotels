@@ -37,7 +37,7 @@ export class ContactUsComponent implements OnInit {
     alert('Your Message has been sent succesfully !!');
 
     //return to Home page
-    location.href = '/home';
+    location.href = '/';
 
   }
 }
