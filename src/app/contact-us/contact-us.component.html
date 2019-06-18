@@ -1,1 +1,69 @@
 <app-search-filter></app-search-filter>
+<div class="row"></div><br><br>
+<div class="row"></div><br><br>
+<div class="row"id="textId">
+  
+  <div class="col-md-4"></div>
+  <div class="col-md-4" id="background">
+    <!-- Contact US form validation code referred from https://jasonwatmore.com/post/2018/11/07/ -->
+
+    <form [formGroup]="validateForm" (ngSubmit)="onSubmit()" id="background">
+        <h3 class="text-ceter">Contact Details</h3>
+
+      <!--chooses subject using dropdown-->
+      <div class="form-group">
+         
+        <label>Please Choose Subject</label>
+        <select class="form-control">
+          <option value="selected">- Please Select -</option>
+          <option>Reservations</option>
+          <option>Meetings</option>
+          <option>Careers</option>
+          <option>Special Request</option>
+          <option>Weedings & Events</option>
+        </select>
+      </div>
+
+      <!--Name field-->
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" formControlName="yourName" class="form-control" placeholder="Enter your Name"
+          [ngClass]="{ 'is-invalid': submitted && func.yourName.errors }" />
+        <div *ngIf="submitted && func.yourName.errors" class="invalid-feedback">
+          <div *ngIf="func.yourName.errors.required">Your Name is required</div>
+        </div>
+      </div>
+
+      <!--Email address field-->
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control" placeholder="name@ParkViewHotel.com"
+          [ngClass]="{ 'is-invalid': submitted && func.email.errors }" />
+        <div *ngIf="submitted && func.email.errors" class="invalid-feedback">
+          <div *ngIf="func.email.errors.required">Email is required</div>
+          <div *ngIf="func.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <!--Message field-->
+      <div class="form-group">
+        <label>Message</label>
+        <input style="height:90px" formControlName="message" placeholder="Please enter your message"
+          class="form-control" [ngClass]="{ 'is-invalid': submitted && func.message.errors }" />
+        <div *ngIf="submitted && func.message.errors" class="invalid-feedback">
+          <div *ngIf="func.message.errors.required">Please enter your message.</div>
+        </div>
+      </div>
+
+      <!--Submit Button-->
+      <div class="form-group">
+        <button class="btn btn-primary" onclick="onClick()">Submit</button>
+      </div>
+    </form>
+
+  
+  </div>
+
+
+</div>
+<br>

@@ -14,9 +14,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
-import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
