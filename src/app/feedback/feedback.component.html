@@ -1,3 +1,66 @@
-<p>
-  feedback works!
-</p>
+<div class="container content">
+
+    <h1 class="text-center">Reviews</h1>
+
+    <button class="btn btn-primary mr-2" ng-click="order = '-rating'">Order by Rating</button>
+    <button class="btn btn-primary" ng-click="order = '-date'">Order by Date</button>
+
+    <ul id="review-list">
+        <li *ngFor="let feedback of feedbacks">
+            <h4>Title: {{ feedback.title }}</h4>
+            <h5>By: {{ feedback.by }}</h5>
+            <small>Date: {{ feedback.date }}</small>
+            <p id="stars{{ feedback.rating }}"></p>
+            <small>{{ feedback.rating }} Stars</small>
+            <p><b>Comment:</b> {{ feedback.comment }}</p>
+        </li>
+    </ul>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-3 col-sm-0"></div>
+
+        <div class="col-lg-6  col-sm-12">
+            <form id="form" name="newReviewForm" ng-submit="addReview()" novalidate>
+                <div class="form-group">
+                    <label >Title: </label>
+                    <input class="form-control w-100" type="text"
+                           ng-model="newreview.title"
+                           ng-require="true">
+                </div>
+                <div class="form-group">
+                    <label >Name: </label>
+                    <input class="form-control w-100" type="text"
+                           ng-model="newreview.by"
+                           ng-require="true">
+                </div>
+                <div class="form-group">
+                    <label >Date: </label>
+                    <input id="reviewDate" class="form-control w-100" type="text" placeholder="yyyy-mm-dd"
+                           ng-model="newreview.date"
+                           ng-pattern="/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/"
+                           ng-require="true">
+                </div>
+                <div class="form-group">
+                    <label >Stars: </label>
+                    <select class="form-control"
+                            ng-model="newreview.rating"
+                            ng-require="true">
+                        <option value="" selected disabled> -- Starts -- </option>
+                        <option ng-repeat="rating in ratings">{{rating.rate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Example textarea</label>
+                    <textarea class="form-control w-100" id="comment" rows="3"
+                              ng-model="newreview.comment"
+                              ng-require="true">
+                    </textarea>
+               </div>
+               <div class="form-group">
+                   <input class="btn btn-primary btn-block" type="submit" value="Add new review" ng-disabled="newReviewForm.$invalid" />
+               </div>
+            </form>
+        </div>
+        <div class="col-lg-3  col-sm-0"></div>
+
+    </div>
+</div>

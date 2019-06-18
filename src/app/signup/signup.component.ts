@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SignUp } from '../sign-up';
+import { SignUp } from '../models/sign-up';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
