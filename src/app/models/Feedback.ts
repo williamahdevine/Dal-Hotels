@@ -1,7 +1,7 @@
 export class Feedback {
     title: string;
 	by: string;
-	rating: number;
+	rating: string;
 	date: string;
 	comment: string;
 }

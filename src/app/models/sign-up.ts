@@ -1,4 +1,3 @@
-
 export class SignUp {
     constructor(
        public name: string,
