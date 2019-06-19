@@ -1,1 +1,90 @@
 <app-search-filter></app-search-filter>
+<section class="section-gray section-padding">
+    <h3 class="title-bold text-center">Book Rooms</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">                          
+                          <table class="table">
+                            <thead class="thead-light">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Room Type</th>
+                                <th scope="col">Room Cost</th>
+                                <th scope="col">Number of Nights</th>
+                                <th scope="col" class="text-center">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>{{rooms[0].beds}} Beds</td>
+                                <td>{{rooms[0].cost}}</td>
+                                <td><input type="number" [(ngModel)]="nightArray[0]" class="form-control cost" /></td>
+                                <td><button class="btn btn-danger btn-rounded" (click)="CancelBooking(0)">Cancel Booking</button></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>{{rooms[1].beds}} Beds</td>
+                                <td>{{rooms[1].cost}}</td>
+                                <td><input type="number" [(ngModel)]="nightArray[1]" class="form-control cost" /></td>
+                                <td><button class="btn btn-danger btn-rounded" (click)="CancelBooking(1)">Cancel Booking</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>{{rooms[2].beds}} Beds</td>
+                                    <td>{{rooms[2].cost}}</td>
+                                    <td><input type="number" [(ngModel)]="nightArray[2]" class="form-control cost" /></td>
+                                    <td><button class="btn btn-danger btn-rounded" (click)="CancelBooking(2)">Cancel Booking</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" colspan="4"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                                    <button class="btn btn-outline-secondary btn-rounded pay-btn" (click)="BookingComplete()">Pay on Check In</button>
+                                    <button class="btn btn-secondary btn-rounded pay-btn" (click)="Redeemed()">{{RedeemedStatus}}</button></td>
+                                    <td class="text-right"><strong>Total Cost:${{total}}</strong></td>
+                                </tr>
+                            </tbody>
+                          </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pay With Card</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" disabled value="{{total}}" required placeholder="Amount" class="form-control" />
+                </div>
+                <div class="form-group">
+                        <label>Card Number</label>
+                    <input type="number" required placeholder="Card Number" class="form-control" />
+                </div>
+                <div class="form-group">
+                        <label>CVV</label>
+                    <input type="number" required placeholder="CVV" class="form-control" />
+                </div>
+                <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="month" required placeholder="Card Number" class="form-control" />
+                </div>
+                <div class="form-group">
+                        <label>Pin</label>
+                        <input type="number" required min="1000"max="9999" placeholder="Security Pin" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" (click)="BookingComplete()">Pay</button>
+            </div>
+          </div>
+        </div>
+      </div>
