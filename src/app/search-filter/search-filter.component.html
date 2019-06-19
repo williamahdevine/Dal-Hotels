@@ -5,13 +5,17 @@
         <div class="search-bar">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Options</button>
+              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menuItem}}</button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Location</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Ratings</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Tags</a>
+                  <a class="dropdown-item" (click)="changeItem('All')" href="JavaScript:Void(0);">All</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click)="changeItem('Location')" href="JavaScript:Void(0);">Location</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click)="changeItem('Ratings')" href="JavaScript:Void(0);">Ratings</a>
+                  <div role="separator" (click)="changeItem('Tags')" class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click)="changeItem('Tags')" href="JavaScript:Void(0);">Tags</a>
+                  <div role="separator" (click)="changeItem('Price')" class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click)="changeItem('Price')" href="JavaScript:Void(0);">Price</a>
               </div>
             </div>
             <input type="text" class="form-control search-padding" aria-label="Text input with dropdown button" placeholder="Avaliable Rooms">
