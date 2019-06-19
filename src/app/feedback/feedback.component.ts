@@ -44,6 +44,7 @@ export class FeedbackComponent implements OnInit {
       });
 
       form.reset();
+      alert("Comment Added Below");
    }
 
    isAscendic = true;
