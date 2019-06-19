@@ -1,0 +1,26 @@
+[{
+    "ref": "#3424",
+    "date": "12 November 2019",
+    "price": 100,
+    "pointsEarned": "10"
+}, {
+    "ref": "#1242",
+    "date": "23 August 2019",
+    "price": 125,
+    "pointsEarned": "10"
+}, {
+    "ref": "#5323",
+    "date": "07 January 2018",
+    "price": 110,
+    "pointsEarned": "5"
+}, {
+    "ref": "#6546",
+    "date": "11 June 2018",
+    "price": 135,
+    "pointsEarned": "10"
+}, {
+    "ref": "#2345",
+    "date": "18 October 2017",
+    "price": 125,
+    "pointsEarned": "5"
+}]

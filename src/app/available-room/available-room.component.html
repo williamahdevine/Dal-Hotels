@@ -5,10 +5,10 @@
       
         <div class="row" id="room-list">
           <div class="col-lg-4 p-3"  *ngFor="let room of rooms">
-            <div class="card no-side-padding no-top-padding">
+            <div class="card no-side-padding no-top-padding grow">
                 <div class="card-body no-side-padding no-top-padding">
                 <div class="row">
-                    <div class="col-lg-12" >
+                    <div class="col-lg-12 " >
                         <img class="img-responsive" src="{{room.img}}{{genRandomNum()}}.jpg" alt="{{room.img}}{{genRandomNum()}}.jpg">
                         <div class="has-side-padding has-top-padding">
                             <h4 class="title text-center">Room Type: {{room.beds}} beds</h4>

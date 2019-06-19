@@ -15,7 +15,10 @@ export class SignupComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { this.submitted = true;
+                alert("Account Created");
+                location.href="/"
+ }
 
   ngOnInit() {
       this.model = new SignUpService('', '', '', '', '');

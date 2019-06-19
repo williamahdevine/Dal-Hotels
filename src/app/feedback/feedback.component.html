@@ -15,7 +15,7 @@
                         <h5>By: {{ feedback.by }}</h5>
                         <small>Date: {{ feedback.date }}</small>
                         <p id="stars{{ feedback.rating }}"></p>
-                        <small>{{ feedback.rating }} Stars</small>
+                        <small class="rotate">{{ feedback.rating }} Stars</small>
                         <p><b>Comment:</b> {{ feedback.comment }}</p>
                     </li>
                 </ul>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="comment">Example textarea <span class="text-danger">*</span></label>
+                        <label for="comment">Comment:<span class="text-danger">*</span></label>
                         <textarea class="reviewForm form-control w-100" id="comment" rows="3"
                                   [(ngModel)]="model.comment" name="comment"
                                   #comment="ngModel"

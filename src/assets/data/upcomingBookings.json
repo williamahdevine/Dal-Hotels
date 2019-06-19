@@ -1,0 +1,26 @@
+[{
+    "ref": "#9845",
+    "date": "13 October 2016",
+    "price": 99,
+    "nights": "3"
+}, {
+    "ref": "#5435",
+    "date": "24 September 2016",
+    "price": 125,
+    "nights": "2"
+}, {
+    "ref": "#7654",
+    "date": "08 February 2015",
+    "price": 125,
+    "nights": "4"
+}, {
+    "ref": "#9323",
+    "date": "12 June 2015",
+    "price": 100,
+    "nights": "1"
+}, {
+    "ref": "#3456",
+    "date": "19 November 2014",
+    "price": 125,
+    "nights": "2"
+}]

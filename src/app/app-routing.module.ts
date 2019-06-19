@@ -9,6 +9,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'feedback',component:FeedbackComponent},
   {path:'contact',component:ContactUsComponent},
   {path:'room-detail',component:HotelDetailsComponent},
+  {path:'booking-record',component:BookingRecordsComponent},
   {path:'',component:HomeComponent}
 ];
 

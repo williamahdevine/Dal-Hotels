@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
     HomeComponent,
     ConfirmEqualValidatorDirective,
     SearchFilterComponent,
-    HotelDetailsComponent
+    HotelDetailsComponent,
+    BookingRecordsComponent
   ],
   imports: [
     BrowserModule,
