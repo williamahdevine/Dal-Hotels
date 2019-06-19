@@ -45,6 +45,7 @@ export class BookingsComponent implements OnInit {
   }
   CancelBooking(roomNumber:number){
     alert("Item Removed");
+    document.getElementById(roomNumber+"").style.display="none";
   }
   BookingComplete(){
     alert("Booking Complete");
