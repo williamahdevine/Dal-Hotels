@@ -2,3 +2,37 @@
     padding-top:30px;
     padding-bottom: 30px;
 }
+@media only screen and (max-width: 600px) {
+    td{
+        font-size:10px !important;
+        padding:2px;
+    }
+    .btn{
+        font-size:10px;
+        margin:1px;
+    }
+    .form-control{
+        padding:2px;
+    }
+    thead{
+        font-size:10px !important;
+    }
+    th{
+        font-size:8px !important;
+        padding:2px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    td{
+        font-size:8px !important;
+        padding:2px;
+    }
+    .btn{
+        font-size:8px;
+        margin:1px;
+    }
+    th{
+        font-size:8px !important;
+        padding:2px;
+    }
+}

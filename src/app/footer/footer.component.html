@@ -13,7 +13,7 @@
               <a class="footer-li" routerLink="/login" routerLinkActive="active">Login</a>
             </li>
             <li class="footer-li">
-              <a class="footer-li" routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+              <a class="footer-li" routerLink="/sign-up" routerLinkActive="active">Sign up</a>
             </li>
           </ul>
         </div>
@@ -33,9 +33,9 @@
           <div class="col-lg-5 col-md-6 col-sm-6">
             <h3 class="title-bold text-center">Newsletter</h3>
               <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" [(ngModel)]="newletter">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary outline-button-blue" type="button" id="button-addon2">Subscribe</button>
+                    <button class="btn btn-outline-secondary outline-button-blue" type="button" id="button-addon2" (click)="newsLetterADD()">Subscribe</button>
                   </div>
                 </div>
           </div>

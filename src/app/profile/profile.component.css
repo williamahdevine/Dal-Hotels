@@ -11,3 +11,16 @@
     color:#7AA9DA;
     font-family:CERA-ROUND-PRO-BOLD;
 }
+.btn-margin{
+    margin:5px;
+}
+
+.blue-outline{
+    color:#0D75B5;
+    border-color:#0D75B5;
+    font-family:CERA-ROUND-PRO-BOLD;
+}
+.blue-outline:hover{
+    background: #0D75B5;
+    color:#fff;
+}

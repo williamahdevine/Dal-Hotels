@@ -56,7 +56,7 @@
                                 <td>{{ booking.price | currency}}</td>
                                 <td>{{ booking.nights }}</td>
                                 <td>
-                                    <button class="btn btn-danger">Cancel</button>
+                                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
                                 </td>
                             </tr>
                         </tbody>

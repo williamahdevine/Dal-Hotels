@@ -33,6 +33,9 @@ export class BookingRecordsComponent implements OnInit {
       this.show = false;
       // alert("history");
   }
+  cancel(){
+    alert("Booking Cancelled");
+  }
 
   showUpcoming(){
       this.show = true;
