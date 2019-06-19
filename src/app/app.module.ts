@@ -17,6 +17,7 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ContactUsComponent,
     HomeComponent,
     ConfirmEqualValidatorDirective,
-    SearchFilterComponent
+    SearchFilterComponent,
+    HotelDetailsComponent
   ],
   imports: [
     BrowserModule,

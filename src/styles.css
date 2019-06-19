@@ -120,7 +120,7 @@
     position: relative;
 }
 .top-element{
-margin-top:4%;
+margin-top:3.5%;
 }
 .section-padding{
     padding-top:40px;
@@ -150,4 +150,17 @@ margin-top:4%;
     color:#fff;
     font-family: CERAROUNDPRO-LIGHT;
 }
+.p-content-room{
+    font-family: CERAROUNDPRO-LIGHT;
+    font-size:12px;
+  }
+  p{
+      font-family: CERAROUNDPRO-LIGHT;
+  }
+  .btn-blue:hover{
+      color:#fff !important;
+      background-color: #193E75 !important;
+      border-color:#193E75 !important;
+
+  }
 
