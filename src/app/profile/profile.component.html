@@ -1,3 +1,58 @@
-<p>
-  profile works!
-</p>
+<section class="top-element section-padding section-gray">
+    <h3 class="title-bold text-center">Profile</h3>
+    <div class="container ">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 text-center">
+            <img src="./assets/images/profile/dp.png" class="img-circle profile-img grow" />
+            <button class="btn btn-primary btn-rounded btn-color" (click)="this.setEditing()">Edit Profile</button>
+            <br>
+            <button class="btn btn-outline-primary blue-outline btn-margin btn-rounded" routerLink="/booking-record" routerLinkActive="active">Booking History</button>
+            <div class="reward-div">
+                <p class="text-left" ><span class="text-bold-blue">Total Points: </span>1000 <br>
+                  <span class="text-bold-blue">Last Used: </span>6 Months ago</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-8">
+            <h4 class="text-success">{{ this.message }}</h4>
+      
+            <form action="">
+              <div class="form-group col-md-9">
+                <label>First Name</label>
+                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.firstName }}"/>
+              </div>
+              <div class="form-group col-md-9">
+                <label>Last Name</label>
+                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.lastName }}"/>
+              </div>
+              <div class="form-group col-md-9">
+                <label>Gender</label>
+                <select
+                  [disabled]="this.getEditing()" class="form-control input-rounded" value="{{ user.gender }}">
+                  <option>--Select Gender--</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group col-md-9">
+                <label>Phone</label>
+                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.phone }}"
+                />
+              </div>
+              <div class="form-group col-md-9">
+                <label>Email</label>
+                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.email }}"
+                />
+              </div>
+      
+              <div class="form-group col-md-9 text-center">
+                <input [disabled]="this.getEditing()" class="col-md-4 btn btn-outline-primary btn-rounded"  type="button" value="Submit" (click)="this.saveUser()"/>
+              </div>
+            </form>
+      
+          </div>
+        </div>
+      
+      </div>
+</section>
+
+

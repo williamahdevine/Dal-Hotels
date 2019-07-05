@@ -13,7 +13,12 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +28,22 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SignupComponent,
     LoginComponent,
     AvailableRoomComponent,
+    ProfileComponent,
     BookingsComponent,
     FeedbackComponent,
     ContactUsComponent,
     HomeComponent,
-    UserProfileComponent
+    ConfirmEqualValidatorDirective,
+    SearchFilterComponent,
+    HotelDetailsComponent,
+    BookingRecordsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

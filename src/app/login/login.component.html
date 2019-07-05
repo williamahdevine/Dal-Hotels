@@ -1,3 +1,48 @@
-<p>
-  login works!
-</p>
+<section class="section-gray login-form top-element">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-md-3">
+                <div class="card rounded-0">
+                    <div class="card-header">
+                    <h3 class="mb-0 title-bold text-center">Login</h3>
+                    </div>
+                    <div class="card-body">
+                    <form class="form" name="signUpForm" (ngSubmit)="onSubmit()" #signUpForm="ngForm" >
+                        <!-- Name -->
+                        <div class="form-group">
+                                <label for="name">Name <span class="text-danger">*</span></label>
+                                <input class="login form-control form-control-lg rounded-0 input-rounded" type="text"
+                                        [(ngModel)]=model.username name="name"
+                                        required
+                                        placeholder="Bob Sagot"
+                                        #name="ngModel" />
+                                <div [hidden]="name.valid || name.pristine && name.untouched"
+                                        class="alert alert-danger">
+                                    Invalid User Name
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group">
+                                    <label for="password">Password <span class="text-danger">*</span></label>
+                                    <input class="login form-control form-control-lg rounded-0 input-rounded" type="password"
+                                            required
+                                            placeholder="Password"
+                                            name="password" [(ngModel)]=model.password
+                                            #password="ngModel"/>
+                                    <div [hidden]="password.valid || password.pristine && password.untouched"
+                                            class="alert alert-danger">
+                                            Invalid Password
+                                    </div>
+                                </div>
+                                <!-- Submit Form -->
+                                <div class="mt-3">
+                                        <input class="btn btn-color btn-rounded btn-lg btn-block" type="submit" value="Login" [disabled]="signUpForm.invalid"/>
+                                    </div>
+                                    <p style="color: red">{{status}}</p>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

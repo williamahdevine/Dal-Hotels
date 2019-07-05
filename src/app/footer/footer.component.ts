@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  public newletter:string;
   constructor() { }
 
   ngOnInit() {
+    this.newletter="";
+  }
+
+  newsLetterADD(){
+    console.log(this.newletter);
+    if(this.newletter === ""){
+      alert("Field Empty");
+    }else{
+      alert("Success Adding Field");
+      this.newletter="";
+    }
+    
   }
 
 }

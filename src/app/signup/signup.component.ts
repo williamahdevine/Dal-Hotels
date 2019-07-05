@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SignUpService } from '../models/sign-up.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -9,7 +11,16 @@ export class SignupComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  model = new SignUpService('', '', '', '', '');
 
+  submitted = false;
+
+  onSubmit() { this.submitted = true;
+                alert("Account Created");
+                location.href="/"
+ }
+
+  ngOnInit() {
+      this.model = new SignUpService('', '', '', '', '');
+  }
 }
