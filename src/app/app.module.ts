@@ -20,6 +20,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +48,8 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
