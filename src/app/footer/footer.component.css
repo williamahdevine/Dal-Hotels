@@ -37,6 +37,9 @@
         text-align: center;
         margin-left: 0;
     }
+    .footer-ui{
+        padding:0;
+    }
   }
   .footer-logo{
     margin-top:5%;
