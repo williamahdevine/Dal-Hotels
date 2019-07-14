@@ -1,0 +1,47 @@
+<footer class="footer-bg-color">
+    <div class="container top-footer-bg">
+      <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-2 text-center">
+            <a class="navbar-brand" href="#"><img class="logo footer-logo" src="assets/images/logo/Logo-blue.svg" alt="Logo-alt"/></a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+          <ul class="footer-ui">
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/login" routerLinkActive="active">Login</a>
+            </li>
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/sign-up" routerLinkActive="active">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"> 
+            <ul class="footer-ui">
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/profile" routerLinkActive="active">Profile</a>
+                </li>
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/feedback" routerLinkActive="active">Feedback</a>
+                </li>
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/contact" routerLinkActive="active">Contact</a>
+                </li>
+            </ul>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-6">
+            <h3 class="title-bold text-center">Newsletter</h3>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" [(ngModel)]="newletter">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary outline-button-blue" type="button" id="button-addon2" (click)="newsLetterADD()">Subscribe</button>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-light bg-light bottom-footer-bg">
+      <p class="bottom-footer">&copy; Dal Hotels 2019</p>
+    </nav>
+</footer>

@@ -1,0 +1,258 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap.min.css';
+@font-face {
+    font-family: CERA-ROUND-PRO-BOLD;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERA-ROUND-PRO-BOLD.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERA-ROUND-PRO-BOLD.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-BLACK;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-BLACK.OTF")
+        ,url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-BLACK.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-LIGHT;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-LIGHT.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-LIGHT.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-MEDIUM;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-MEDIUM.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-MEDIUM.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-REGULAR;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-REGULAR.OTF")
+        ,url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-REGULAR.eot");
+}
+@font-face {
+    font-family: CERAROUNDPRO-THIN;
+    src: url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-THIN.OTF"),
+        url("assets/fonts/cera-rounded-pro/TYPEMATES-CERAROUNDPRO-THIN.eot");
+}
+.title{
+    font-family: CERAROUNDPRO-MEDIUM;
+    /* color:#0D75B5; */
+    color:#7AA9DA;
+}
+.title-bold{
+    font-family: CERA-ROUND-PRO-BOLD;
+    color:#7AA9DA;
+    /* color:#0D75B5; */
+}
+.outline-button-white{
+    color:#fff;
+    border-color:#fff; 
+}
+.outline-button-blue{
+    color:#0D75B5;
+    border-color:#0D75B5; 
+}
+.button-blue{
+    background-color: #0D75B5;
+    color:#FFF;
+}
+.p-content{
+    font-family: CERAROUNDPRO-LIGHT;
+    font-size:14px;
+}
+.cera-black{
+    font-family: CERAROUNDPRO-BLACK;
+}
+
+.color-white{
+    color:#FFF !important;
+}
+.color-gray{
+    color:#353535 !important;
+}
+.section-white{
+    background-color: #fff;
+    padding:30px;   
+    /* border-bottom: solid;
+    border-bottom-color: #7AA9DA;
+    border-width: 1px; */
+}
+.image-location-container{
+    position: relative;
+    margin: 10px;
+}
+.image-overlay-blue{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-color: #0D75B5;
+    opacity: 0.7;
+
+}
+.image-overlay-center-text{
+    top:38%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    
+}
+.img-responsive{
+    max-width: 100%;
+     height: auto;
+    display:block;
+}
+.img-rooms-responsive{
+    max-width: 70%;
+    height: auto;
+   display:block;
+   margin-left:15%;
+   margin-right:15%;
+   margin-bottom: 5px;
+}
+.img-rounded{
+    border-radius: 20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+}
+.img-star{
+    margin:2px;
+    transition: transform 1s;
+}
+  
+.img-star:hover {
+    transform: rotate(180deg);
+  }
+.banner{
+    position: relative;
+}
+.top-element{
+margin-top:3.5%;
+}
+.section-padding{
+    padding-top:40px;
+    padding-bottom: 40px;
+}
+.section-gray{
+    background-color: #F7F7F7;
+}
+
+.img-circle{
+    border-radius: 50%;
+}
+.btn-rounded{
+    padding-left: 30px;
+    padding-right:30px;
+    border-radius: 20px;
+}
+.input-rounded{
+    padding-left: 30px;
+    padding-right:30px;
+    border-radius: 20px !important;
+    font-family: CERAROUNDPRO-LIGHT;
+}
+.btn-color{
+    background-color: #0D75B5;
+    border-color:#0D75B5;
+    color:#fff;
+    font-family: CERAROUNDPRO-LIGHT;
+}
+.p-content-room{
+    font-family: CERAROUNDPRO-LIGHT;
+    font-size:12px;
+  }
+  p{
+      font-family: CERAROUNDPRO-LIGHT;
+  }
+  .btn-blue:hover{
+      color:#fff !important;
+      background-color: #193E75 !important;
+      border-color:#193E75 !important;
+
+  }
+
+/* concept from https://www.codementor.io/maackle/animate-anything-with-one-line-of-css-c5iotkhhb */
+  .grow:hover
+{
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+}
+.swing:hover
+{
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+}
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+.rotate{
+    transition: transform 1s !important;
+}
+  
+.rotate:hover {
+    transform: rotate(180deg) !important;
+  }

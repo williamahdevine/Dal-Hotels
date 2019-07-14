@@ -1,0 +1,21 @@
+.btn-primary{
+    background-color:#7AA9DA;
+    border-color:#7AA9DA;
+}
+.btn-margin{
+    margin-bottom:10px; 
+}
+
+.small-img{
+    margin-top:1px;
+    margin-bottom: 1px;
+    width:100%;
+    height:100%;
+}
+.small-img-box{
+    padding: 1px;
+
+}
+.p-justify{
+    text-align: justify;
+}

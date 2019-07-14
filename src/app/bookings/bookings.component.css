@@ -1,0 +1,53 @@
+.section-padding{
+    padding-top:30px;
+    padding-bottom:30;
+}
+.thead-light{
+    background-color:#0D75B5 !important;
+    color:#fff !important;
+}
+table{
+    font-family: CERAROUNDPRO-LIGHT;
+}
+.cost{
+    width: 50%;
+}
+.pay-btn{
+    margin-left:5px;
+    margin-right:5px;
+
+}
+@media only screen and (max-width: 600px) {
+    td{
+        font-size:10px !important;
+        padding:2px;
+    }
+    .btn{
+        font-size:10px;
+        margin:1px;
+    }
+    .form-control{
+        padding:2px;
+    }
+    thead{
+        font-size:10px !important;
+    }
+    th{
+        font-size:8px !important;
+        padding:2px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    td{
+        font-size:8px !important;
+        padding:2px;
+    }
+    .btn{
+        font-size:8px;
+        margin:1px;
+    }
+    th{
+        font-size:8px !important;
+        padding:2px;
+    }
+}

@@ -1,0 +1,27 @@
+.header-bg{
+    /* background-color: #1E3356 !important; */
+    background-color: #4D6282 !important;
+}
+.navbar-toggler{
+    color: #FFF;
+}
+.nav-link{
+    color: #fff !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: CERAROUNDPRO-LIGHT;
+}
+img.logo{
+    width:150px;
+}
+@media only screen and (max-width: 600px) {
+    .right-margin{
+        margin-left: 0%;
+        text-align: center;
+    }
+  }
+
+a {
+    white-space: nowrap;
+    overflow: hidden;
+}

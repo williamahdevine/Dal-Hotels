@@ -1,0 +1,26 @@
+.profile-img{
+    margin-bottom: 10px;
+    width:65%;
+}
+.reward-div{
+    width:70%;
+    margin-left: 15%;
+    margin-top:5px;
+}
+.text-bold-blue{
+    color:#7AA9DA;
+    font-family:CERA-ROUND-PRO-BOLD;
+}
+.btn-margin{
+    margin:5px;
+}
+
+.blue-outline{
+    color:#0D75B5;
+    border-color:#0D75B5;
+    font-family:CERA-ROUND-PRO-BOLD;
+}
+.blue-outline:hover{
+    background: #0D75B5;
+    color:#fff;
+}
