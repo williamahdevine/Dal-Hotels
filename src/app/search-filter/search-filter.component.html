@@ -4,23 +4,58 @@
       <div class="col-lg-12">
         <div class="search-bar">
           <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menuItem}}</button>
+          <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Locations}}</button>
               <div class="dropdown-menu">
-                  <a class="dropdown-item" (click)="changeItem('All')" href="JavaScript:Void(0);">All</a>
+              <a class="dropdown-item" (click)="changeValue('location','All Locations')" href="JavaScript:Void(0);">All Locations</a>
                   <div role="separator" class="dropdown-divider"></div>
-                  <a class="dropdown-item" (click)="changeItem('Location')" href="JavaScript:Void(0);">Location</a>
+              <div *ngFor="let location of Locations_Data">
+                  <a class="dropdown-item" (click)="changeValue('location',location)" href="JavaScript:Void(0);">{{location}}</a>
                   <div role="separator" class="dropdown-divider"></div>
-                  <a class="dropdown-item" (click)="changeItem('Ratings')" href="JavaScript:Void(0);">Ratings</a>
-                  <div role="separator" (click)="changeItem('Tags')" class="dropdown-divider"></div>
-                  <a class="dropdown-item" (click)="changeItem('Tags')" href="JavaScript:Void(0);">Tags</a>
-                  <div role="separator" (click)="changeItem('Price')" class="dropdown-divider"></div>
-                  <a class="dropdown-item" (click)="changeItem('Price')" href="JavaScript:Void(0);">Price</a>
+              </div>
               </div>
             </div>
-            <input type="text" class="form-control search-padding" aria-label="Text input with dropdown button" placeholder="Avaliable Rooms">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Ratings}}</button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="changeValue('Ratings','All Ratings')" href="JavaScript:Void(0);">All Ratings</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <div *ngFor="let rating of Ratings_Data">
+                  <a class="dropdown-item" (click)="changeValue('Ratings',rating)" href="JavaScript:Void(0);">{{rating}}</a>
+                  <div role="separator" class="dropdown-divider"></div>
+              </div>
+              </div>
+            </div>
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{roomSize}}</button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="changeValue('Room Size','All Room Sizes')" href="JavaScript:Void(0);">All Room Sizes</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <div *ngFor="let size of RoomSize_Data">
+                  <a class="dropdown-item" (click)="changeValue('Room Size',size)" href="JavaScript:Void(0);">{{size}}</a>
+                  <div role="separator" class="dropdown-divider"></div>
+              </div>
+              </div>
+            </div>
+            <select class="form-control" [(ngModel)]="priceRange" >
+            <option>All Price Ranges</option>
+            <option *ngFor="let price_range of objectKeys(priceRange_Data)">
+              {{price_range}}
+            </option>
+            </select>
             <div class="input-group-append">
-            <button routerLink="/avaliable" routerLinkActive="active" class="btn btn-secondary button-blue" type="button">Search</button>
+              <button class="btn btn-outline-primary dropdown-toggle outline-button-blue" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{numberOfBeds}}</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="changeValue('Bed Sizes','All Bed Sizes')" href="JavaScript:Void(0);">All Bed Sizes</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                  <div *ngFor="let bed of Beds_Data">
+                    <a class="dropdown-item" (click)="changeValue('Bed Sizes',bed)" href="JavaScript:Void(0);">{{bed}}</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                  </div>
+                </div>
+            </div>
+            <div class="input-group-append">
+            <button (click)="submit()" routerLinkActive="active" class="btn btn-secondary button-blue" type="button">Search</button>
           </div>
         </div>
       </div>

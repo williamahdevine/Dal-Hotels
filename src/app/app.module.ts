@@ -23,6 +23,7 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { environment } from 'src/environments/environment';
     ConfirmEqualValidatorDirective,
     SearchFilterComponent,
     HotelDetailsComponent,
-    BookingRecordsComponent
+    BookingRecordsComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
