@@ -16,7 +16,7 @@
                             </thead>
                             <tbody>
                               <tr *ngFor="let Broom of RoomViews" id="{{Broom['id']}}">
-                                
+                                <th scope="row">1</th>
                                 <td>{{Broom["beds"]}} Beds</td>
                                 <td>{{Broom["cost"]}}</td>
                                 <td><input type="number" [(ngModel)]="nightArray[Broom['id']]" class="form-control cost" /></td>
@@ -24,7 +24,7 @@
                                 <td></td>
                               </tr>
                                 <tr>
-                                    <td class="text-left" colspan="3"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                                    <td class="text-left" colspan="4"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
                                     <button class="btn btn-outline-secondary btn-rounded pay-btn" (click)="payOnCheckIn()">Pay on Check In</button>
                                     <button class="btn btn-secondary btn-rounded pay-btn" (click)="Redeemed()">{{RedeemedStatus}}</button></td>
                                     <td class="text-right"><strong>Total Cost:${{totalBookingCost()}}</strong></td>
