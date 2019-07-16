@@ -1,13 +1,13 @@
 <app-search-filter></app-search-filter>
 <section class="section-gray section-padding">
+<br><br>
     <h3 class="title-bold text-center">Book Rooms</h3>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">                          
+            <div class="col-lg-12">                        
                           <table class="table">
                             <thead class="thead-light">
                               <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Room Type</th>
                                 <th scope="col">Room Cost</th>
                                 <th scope="col">Number of Nights</th>
@@ -16,7 +16,6 @@
                             </thead>
                             <tbody>
                               <tr *ngFor="let Broom of RoomViews" id="{{Broom['id']}}">
-                                <th scope="row">1</th>
                                 <td>{{Broom["beds"]}} Beds</td>
                                 <td>{{Broom["cost"]}}</td>
                                 <td><input type="number" [(ngModel)]="nightArray[Broom['id']]" class="form-control cost" /></td>
@@ -24,13 +23,14 @@
                                 <td></td>
                               </tr>
                                 <tr>
-                                    <td class="text-left" colspan="4"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                                    <td class="text-left" colspan="3"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
                                     <button class="btn btn-outline-secondary btn-rounded pay-btn" (click)="payOnCheckIn()">Pay on Check In</button>
                                     <button class="btn btn-secondary btn-rounded pay-btn" (click)="Redeemed()">{{RedeemedStatus}}</button></td>
                                     <td class="text-right"><strong>Total Cost:${{totalBookingCost()}}</strong></td>
                                 </tr>
                             </tbody>
                           </table>
+                          <br><br>
             </div>
         </div>
     </div>

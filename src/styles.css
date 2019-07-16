@@ -256,3 +256,10 @@ margin-top:3.5%;
 .rotate:hover {
     transform: rotate(180deg) !important;
   }
+
+  .search-select{
+      background-color: transparent;
+      border-color: #0D75B5;;
+      border-width:#0D75B5;;
+      color: #0D75B5;; 
+  }
