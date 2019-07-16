@@ -1,67 +1,56 @@
-Project - Group 7 
-Web Design
+# Assignment 4
+by Shuo Yang
+### Two Features
 
-References
-[1] Andrew Neel unsplash 
-    https://unsplash.com/photos/B4rEJ09-Puo
-[2] Photo by Markus Spiske on Unsplash
-    https://unsplash.com/photos/g5ZIXjzRGds
-[3] Photo by NeONBRAND on Unsplash
-    https://unsplash.com/photos/)
-[4] Photo by Alexandra Gorn on Unsplash
-    https://unsplash.com/photos/
-[5] Photo by Philipp Berndt on Unsplash
-    https://www.flaticon.com/free-icon/star_148841#term=star&page=1&position=2
-[6] Photo by Becca Tapert on Unsplash
-    https://unsplash.com/photos/
-[7] Photo by Michael D Beckwith on Unsplash
-    https://unsplash.com/photos/
-[8] Photo by Daniil Silantev on Unsplash
-    https://unsplash.com/photos/
-[9] Jorge Vasconez Unsplash toronto link
-    https://unsplash.com/photos/Eh1ipuQIxiY
-[10]Image by 1chigo121212 from Pixabay  
-    https://pixabay.com/photos/montreal-city-urban-night-lights-247795/
-[11]Image by Graham Habster from Pixabay 
-    https://pixabay.com/photos/halifax-nova-scotia-waterfront-2370263/
+  - Cancel upcoming bookings (100% finished)
+  - View receipts of booking history
+  -- download to local machine (80% finished)
+  -- send to users' email address (50% finished)
 
+### Tech used
 
+* AngularJS - HTML enhanced for web apps.
+* node.js - evented I/O for the backend
+* Express - fast node.js network app framework 
+* Firebase - store data
 
-Links
-  http://129.173.22.35:26543/
-  http://129.173.22.35:26543/login
-  http://129.173.22.35:26543/sign-up
-  http://129.173.22.35:26543/feedback
-  http://129.173.22.35:26543/contact
-  http://129.173.22.35:26543/avaliable
-  http://129.173.22.35:26543/booking-record
-  
-
-Git
-  https://git.cs.dal.ca/agbola/web_project_group_7.git
-File Structure
-e2e
-src
-  app
-    footer
-    header
-    home
-    available-room
-    bookings
-    contact-us
-    hotel-details
-    login
-    models
-    profile
-    search-filter
-    signup
-    booking-history
-    booking-records
-    feedback
+other tech I used:
+*	HTML
+○	Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.
+*	CSS
+○	CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once
+*	Bootstrap
+○	Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development
+*	Javascript
+○	JavaScript is the Programming Language for the Web. JavaScript can update and change both HTML and CSS. JavaScript can calculate, manipulate
+*	Ajax
+○	AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes.
 
 
+### Installation
 
-Frameworks
-Boostrap: this is a powerful and popular CSS framwork with and all my groupmates had experience with this framework
-Angular 7: This is a power MVC Javascript Framework and most of my team members had good experience with this framework
+ requires Node.js and Anuglarjs to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ npm install 
+$ npm install -g @angular/cli
+$ ng serve
+```
+
+Then open the browser to http://localhost:4200/booking-record
+
+### How to use
+1. At booking history page, click "view" button to download receipt to local machine, click "mail send" to send the receipt to users' email address.
+2. At upcoming booking page, click "cancel" then there will be an alert to ensure you want to cancel in case there's mis-clicking. After you confirm, the status of upcoming booking will change to "canceled".
+
+### Files created in project
+- booking-records.component.ts
+- booking-records.component.html
+- firebase.service.ts
+
+### Gitlab address
+- https://git.cs.dal.ca/agbola/web_project_group_7.git
+-- branch -booking_history
 

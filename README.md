@@ -1,27 +1,57 @@
-# WebGroupAngular
+# Assignment 4
+by Shuo Yang
+### Two Features
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+  - Cancel upcoming bookings (100% finished)
+  - View receipts of booking history
+  -- download to local machine (80% finished)
+  -- send to users' email address (50% finished)
 
-## Development server
+### Tech used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* AngularJS - HTML enhanced for web apps.
+* node.js - evented I/O for the backend
+* Express - fast node.js network app framework 
+* Firebase - store data
 
-## Code scaffolding
+other tech I used:
+*	HTML
+○	Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.
+*	CSS
+○	CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once
+*	Bootstrap
+○	Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development
+*	Javascript
+○	JavaScript is the Programming Language for the Web. JavaScript can update and change both HTML and CSS. JavaScript can calculate, manipulate
+*	Ajax
+○	AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ requires Node.js and Anuglarjs to run.
 
-## Running unit tests
+Install the dependencies and devDependencies and start the server.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+$ npm install 
+$ npm install -g @angular/cli
+$ ng serve
+```
 
-## Running end-to-end tests
+Then open the browser to http://localhost:4200/booking-record
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### How to use
+1. At booking history page, click "view" button to download receipt to local machine, click "mail send" to send the receipt to users' email address.
+2. At upcoming booking page, click "cancel" then there will be an alert to ensure you want to cancel in case there's mis-clicking. After you confirm, the status of upcoming booking will change to "canceled".
 
-## Further help
+### Files created in project
+- booking-records.component.ts
+- booking-records.component.html
+- firebase.service.ts
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Gitlab address
+- https://git.cs.dal.ca/agbola/web_project_group_7.git
+-- branch -booking_history
+
+
