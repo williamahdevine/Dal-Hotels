@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'avaliable',component:AvailableRoomComponent},
   {path:'sign-up',component:SignupComponent},
-  {path:'bookings',component:BookingsComponent},
+  {path:'bookings/:id',component:BookingsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'feedback',component:FeedbackComponent},
   {path:'contact',component:ContactUsComponent},

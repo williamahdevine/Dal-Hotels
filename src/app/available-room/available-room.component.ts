@@ -23,7 +23,7 @@ export class AvailableRoomComponent implements OnInit {
           ...item.payload.doc.data()
         } as AvailableRoom;
       });
-      // console.log(this.rooms);
+       console.log(this.rooms[0].id);
     });
   }
 

@@ -82,23 +82,29 @@ export class RoomSearchService {
   }
 
   getAllRatings(){
-    for(var i = 1 ; i <= 5; i++){
-      this.ratings.push(i);
+    if(this.ratings.length==0){
+      for(var i = 1 ; i <= 5; i++){
+        this.ratings.push(i);
+      }
     }
     return this.ratings;
   }
 
   getAllBeds(){
-    for(var i = 1 ; i <= 5; i++){
-      this.beds.push(i);
-    }
+    if(this.beds.length==0){
+      for(var i = 1 ; i <= 5; i++){
+        this.beds.push(i);
+      }
+     }
     return this.beds;
   }
 
   getAllSizes(){
+    if(this.sizes.length==0){
       this.sizes.push("small");
       this.sizes.push("medium");
       this.sizes.push("large");
+    }
     return this.sizes;
   }
 

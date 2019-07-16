@@ -42,16 +42,6 @@ export class SearchFilterComponent implements OnInit {
       this.priceRange = sessionData["price_range"];
       this.roomSize = sessionData["Room Sizes"];
       this.numberOfBeds= sessionData["numberOfBeds"];
-      // var tag_list = JSON.parse(sessionData["tags"])
-  
-      // for(var tag in tag_list){
-      //   var id = tag_list[tag];
-      //   console.log(id)
-      //   var elem = <HTMLInputElement>document.getElementById(id);
-      //   // console.log(elem);
-      //   // elem.checked = true;
-      // }
-      console.log(sessionData);
     }
     
   }
@@ -89,22 +79,6 @@ export class SearchFilterComponent implements OnInit {
     this.query["price_range"]=this.priceRange;
     this.query["price_data"]=this.priceRange_Data[this.priceRange];
     this.query["Room Sizes"]=this.roomSize;
-    // var selected_tags = [];
-    // var all = <HTMLInputElement>document.getElementById("All");
-    // if(all.checked){
-    //   selected_tags.push("All");
-    // }else{
-    //   for(var tag in this.Tag_Data){
-    //     var id = this.Tag_Data[tag].tag_name;
-    //     var elem = <HTMLInputElement>document.getElementById(id);
-    //     if(elem.checked){
-    //       selected_tags.push(this.Tag_Data[tag].tag_name);
-    //     }
-        
-    //   }
-    //   console.log(this.query);
-    // }
-    // this.query["tags"]=JSON.stringify(selected_tags);
     sessionStorage.setItem("searchData", JSON.stringify(this.query));
     window.location.href = "/search";
   }

@@ -37,8 +37,7 @@
               </div>
               </div>
             </div>
-            <select class="form-control" [(ngModel)]="priceRange" >
-            <option>All Price Ranges</option>
+            <select class="form-control" [(ngModel)]="priceRange">
             <option *ngFor="let price_range of objectKeys(priceRange_Data)">
               {{price_range}}
             </option>
