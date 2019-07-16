@@ -1,0 +1,40 @@
+<app-search-filter></app-search-filter>
+<section class="section-padding section-gray">
+    <div class="container">
+        <h3 class="title-bold text-center">Search Page</h3>
+      
+        <div class="row" id="room-list">
+          <div class="col-lg-4 p-3"  *ngFor="let room of objectKeys(rooms)">
+            <div class="card no-side-padding no-top-padding grow">
+                <div class="card-body no-side-padding no-top-padding">
+                <div class="row">
+                    <div class="col-lg-12 " >
+                        <img class="img-responsive" src="{{rooms[room].img}}{{genRandomNum()}}.jpg" alt="image">
+                        <div class="has-side-padding has-top-padding">
+                            <h4 class="title text-center">Room Type: {{rooms[room].beds}} beds</h4>
+                            <p><strong>Room Size:</strong> {{rooms[room].size}} room</p>
+                            <p><strong>Cost:</strong> {{rooms[room].cost | currency}} Per Night</p>
+                            <div class="text-center">
+                              <!-- Icon by Smashicons in FlatIcons -->
+                              <img *ngFor="let star of range(rooms[room].ratings)" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" />
+                          </div>
+                            <div class="text-center">
+                                <button routerLink="/room-detail" routerLinkActive="active" class="btn btn-outline-secondary btn-rounded btn-room" ng-click="viewDetails(rooms[room].number)">View Details</button>
+                                <button [routerLink]="['/bookings', room]" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room">Book Now</button>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+          </div>
+      
+        </div>
+        <div class="row" *ngIf="notFound">
+          <div class="col-lg-12 text-center">
+            <img src="/assets/images/icons/404-error.svg" class="search-not-found" alt="404" />
+            <h4 class="title-bold text-center">Search Not Found Please Reduce Filters</h4>
+          </div>
+        </div>
+      </div>
+</section>
