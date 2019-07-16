@@ -1,4 +1,4 @@
-[{
+{"rooms":[{
     "number": 1,
     "size": "Large",
     "beds": 3,
@@ -179,3 +179,4 @@
     "img6": "assets/images/room/6.jpg",
     "details": "Aliquam in mi maximus, sollicitudin sem sagittis, placerat augue. Pellentesque feugiat pellentesque ipsum in mollis. Nulla facilisis lectus elit, feugiat pulvinar mauris mattis ut. Sed posuere mollis fringilla. Nullam sit amet odio sit amet purus posuere vehicula. Proin at erat at dolor ullamcorper sagittis a vulputate risus. Pellentesque vel mauris vitae ligula suscipit semper at eu ex. Nulla nec odio urna. Quisque blandit faucibus porta. Cras venenatis rutrum condimentum."
 }]
+}

@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
 import { FeedbackService } from '../feedback.service';
 
@@ -11,43 +12,50 @@ import { Ratings } from '../models/Ratings';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-  feedbacks:Feedback[];
-  ratings:Ratings[];
+  feedbacks: Feedback[];
+  ratings: Ratings[];
 
   model = new FeedbackForm('', '', '', '', '');
 
   // sorting:string = Feedback.rating;
 
-  title:string;
-  by:string;
-  date:string;
-  rating:string;
-  comment:string;
+  title: string;
+  by: string;
+  date: string;
+  rating: string;
+  comment: string;
 
   submitted = false;
 
   addReview(form) {
-      this.submitted = true;
+    this.submitted = true;
 
-      this.title = form.value.title;
-      this.by = form.value.by;
-      this.date = form.value.date;
-      this.rating = form.value.rating;
-      this.comment = form.value.comment;
+    this.title = form.value.title;
+    this.by = form.value.by;
+    this.date = form.value.date;
+    this.rating = form.value.rating;
+    this.comment = form.value.comment;
 
-      this.feedbacks.push({
-          title:this.title,
-          by:this.by,
-          rating:this.rating,
-          date:this.date,
-          comment:this.comment
-      });
+    this.feedbacks.push({
+      title: this.title,
+      by: this.by,
+      rating: this.rating,
+      date: this.date,
+      comment: this.comment
+    });
+    this.db.list<Feedback>('/reviews').push({
+      title: this.title,
+      by: this.by,
+      rating: this.rating,
+      date: this.date,
+      comment: this.comment
+    });
 
-      form.reset();
-      alert("Comment Added Below");
-   }
+    form.reset();
+    alert('Comment Added Below');
+  }
 
-   isAscendic = true;
+  isAscendic = true;
 
   //  sortByRating() {
   //      this.isAscendic?this.ratingAscendic():this.ratingDescendic();
@@ -77,21 +85,28 @@ export class FeedbackComponent implements OnInit {
   // //       });
   // //  }
 
-  constructor(private feedbackService:FeedbackService) { }
+  constructor(
+    private feedbackService: FeedbackService,
+    public db: AngularFireDatabase
+  ) {}
 
   ngOnInit() {
-      this.model = new FeedbackForm('', '', '', '', '');
+    this.model = new FeedbackForm('', '', '', '', '');
 
-      this.feedbackService.getFeedback().subscribe(feedbacks => {
-          this.feedbacks = feedbacks;
+    this.db
+      .list<Feedback>('/reviews')
+      .valueChanges()
+      .forEach(r => {
+        this.feedbacks = r;
+        console.log(r);
       });
 
-      this.ratings = [
-          {rate: '1'},
-    {rate: '2'},
-    {rate: '3'},
-    {rate: '4'},
-    {rate: '5'}
-      ]
+    this.ratings = [
+      { rate: '1' },
+      { rate: '2' },
+      { rate: '3' },
+      { rate: '4' },
+      { rate: '5' }
+    ];
   }
 }

@@ -1,3 +1,7 @@
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,6 +23,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,8 +49,11 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase,"test"),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
