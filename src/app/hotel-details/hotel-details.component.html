@@ -14,7 +14,7 @@
           <!-- Icon by Smashicons in FlatIcons -->
           <img *ngFor="let star of rooms[ind].rating" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" />
         </div>
-        <p class="p-content-room">Address: {{rooms[ind].distanceToCityCenter}} Per Night</p>
+        <p class="p-content-room">Address: {{rooms[ind].address}} Per Night</p>
         <button routerLink="/bookings" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room btn-margin">Book Now</button>
       </div>
       <div class="col-lg-4 small-img-box">

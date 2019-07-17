@@ -20,6 +20,7 @@ export class AvailableRoomComponent implements OnInit {
 
   // When the page is initialized:
   ngOnInit() {
+
     // This will call the getRoom() method from the AvailableRoom service.
     // By subscribing the data will be updating without the user having to refresh.
     // It will put all of the data into the rooms array and formatted as a available room model.
@@ -34,7 +35,7 @@ export class AvailableRoomComponent implements OnInit {
   }
 
   viewDetails(i) {
-    this.service.viewDetails(i);
+    this.service.viewDetails(i, '5f31RvF6LKJCghBQJnPT');
   }
   test(i) {
     this.service.test(i);
