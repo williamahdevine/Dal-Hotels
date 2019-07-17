@@ -1,3 +1,5 @@
+// William Devine
+// Import all required libraries.
 import { Component, OnInit } from '@angular/core';
 import { AvaliableRoomServiceService } from '../avaliable-room-service.service';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
@@ -14,26 +16,32 @@ export class HotelDetailsComponent implements OnInit {
 
   rooms: AvailableRoom[];
   currentImg: number;
-
+  ind: number;
   constructor(private service: AvaliableRoomServiceService) {
   }
 
   ngOnInit() {
+    this.ind = this.service.getIndex();
     // this.rooms = this.roomService.getRooms();
     this.service.getRooms().subscribe(actionArray => {
       this.rooms = actionArray.map(item => {
+        // if (item.payload.doc.id === '5f31RvF6LKJCghBQJnPT') {
         return {
           id: item.payload.doc.id,
           ...item.payload.doc.data()
         } as AvailableRoom;
+        // }
       });
-      // console.log(this.rooms);
+      console.log(this.rooms);
     });
   }
 
-	genRandomNum() {
+// getIndex() {
+//     return 0;
+// }
+  genRandomNum() {
     this.currentImg = Math.floor(Math.random() * 6) + 1;
-	}
+  }
 
   changeImage(image_number: number) {
     this.currentImg = image_number;
