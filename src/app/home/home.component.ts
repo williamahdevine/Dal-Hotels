@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RoomSearchService } from '../room-search.service';
+import { RoomSearchService } from '../models/room-search.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,14 @@ import { RoomSearchService } from '../room-search.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+//Student Name: Agbola Iseoluwatobi
+//Student ID: B00802526
 
-  public menuItem:string;
+  
+  //the constructor sets the Room Search Service 
   constructor(public search : RoomSearchService) { }
+  // The variables are set
+  public menuItem:string;
   public Tag:string;
   public Ratings:string;
   public Locations:string;
@@ -18,19 +23,22 @@ export class HomeComponent implements OnInit {
   public roomSize:string;
   public numberOfBeds:string;
   public query = {};
-
-  public Tag_Data:any;
   public Ratings_Data:any;
   public Locations_Data:any;
   public priceRange_Data:any;
   public Beds_Data:any;
   public RoomSize_Data:any;
   objectKeys = Object.keys;
+
   ngOnInit() {
+    //this sets all default values and calls default functions
     this.menuItem = "All";
     this.getData();
     this.checkSession();
   }
+
+  //this checks if a search query combination is stored in session storage
+  //is also sets the queries to the stored queries
   checkSession(){
     let data = sessionStorage.getItem('searchData');
     if(data){
@@ -43,6 +51,8 @@ export class HomeComponent implements OnInit {
     }
     
   }
+
+  // this gets default field data values from the cloud storage
   getData(){
     this.Tag = "Tags";
     this.Ratings = "All Ratings"
@@ -51,13 +61,14 @@ export class HomeComponent implements OnInit {
     this.roomSize = "All Room Sizes";
     this.numberOfBeds= "All Bed Sizes";
     
-    this.Tag_Data = this.search.getAllTags();
     this.Ratings_Data = this.search.getAllRatings();
     this.Locations_Data = this.search.getAllLocations();
     this.priceRange_Data = this.search.getPriceRange();
     this.Beds_Data = this.search.getAllBeds();
     this.RoomSize_Data = this.search.getAllSizes();
   }
+
+  //this sets new values when the user makes a change 
   changeValue(input_type,value){
     if(input_type=="Bed Sizes"){
       this.numberOfBeds = value;
@@ -70,6 +81,7 @@ export class HomeComponent implements OnInit {
     }
   }
   
+  // this submits the query to the new page stores the data that will be used to query the database
   submit(){
     this.query["Ratings"]=this.Ratings;
     this.query["Locations"]=this.Locations;

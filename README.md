@@ -1,27 +1,44 @@
-# WebGroupAngular
+##Student Name: Agbola Iseoluwatobi
+##Student ID: B00802526
+##Assignment 4
+##Project - Group 7 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+##Feature: Search Feature 
 
-## Development server
+##Overview 
+This feature involves the design of an interactive search bar for users of the application. 
+The backend received the queries sent to the frontend by the user and uses those queries to generate
+the set of the room which fit those criteria. the search bars filters are generated from the NoSql database and this helps the user to make 
+accurate results
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Modifications 
+The Feature was initially a single dropdown with the search query being performed on one criterion however while developing the search I discovered that a multi-varied search bar would be more suitable for the user and so I developed the search bar with 5 different filters to provide the user with an interactive way to search for rooms.
 
-## Code scaffolding
+##References
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+##Links
+  http://129.173.22.35:26543/
+  http://129.173.22.35:26543/search
+  http://129.173.22.35:26543/avaliable
+  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##Git
+  https://git.cs.dal.ca/agbola/web_project_group_7.git
+##Feature Branch
+     search_feature_a4_submission
+##Files Worked On
+  src/app/search-filter
+  src/app/search-page
+  src/app/models/room-search.ts
+  src/app/home
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+##Frameworks and technologies 
+Boostrap: this is a powerful and popular CSS framwork with and all my groupmates had experience with this framework
+Angular 7: This is a power MVC Javascript Framework and most of my team members had good experience with this framework
+Firebase: this a google cloud product that give application functionalities like NoSql databases, analytics and other features 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

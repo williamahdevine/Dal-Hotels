@@ -28,7 +28,7 @@
                           <p class="p-content-room text-center">Address: {{room.address}}</p>
                             <div class="text-center">
                                 <button routerLink="/room-detail" routerLinkActive="active" class="btn btn-outline-secondary btn-rounded btn-room" (click)="viewDetails(i)">View Details</button>
-                                <button routerLink="/bookings" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room">Book Now</button>
+                                <button [routerLink]="['/bookings', room.id]" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room">Book Now</button>
                             </div>
                         </div>
                         </div>
