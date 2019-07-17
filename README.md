@@ -1,9 +1,9 @@
-##Student Name: Agbola Iseoluwatobi
-##Student ID: B00802526
-##Assignment 4
-##Project - Group 7 
+##Student Name: Agbola Iseoluwatobi 
+##Student ID: B00802526 
+##Assignment 4 
+##Project - Group 7  
 
-##Feature: Search Feature 
+##Feature: Search Feature  
 
 ##Overview 
 This feature involves the design of an interactive search bar for users of the application. 
