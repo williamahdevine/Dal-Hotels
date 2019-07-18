@@ -1,6 +1,5 @@
 // William Devine
 // Import all required libraries.
-
 import { Component, OnInit } from '@angular/core';
 import { AvaliableRoomServiceService } from '../avaliable-room-service.service';
 import { AvailableRoom } from '../shared/available-room.model';
@@ -15,13 +14,13 @@ import { AvaliableRoomService } from '../models/avaliable-room.service';
 export class AvailableRoomComponent implements OnInit {
   // rooms array of type availableRooms. This will hold all of the available rooms.
   rooms: AvailableRoom[];
-
+  roomcount = [];
+  count = 0;
   // Initialize the room service.
   constructor(private service: AvaliableRoomServiceService) { }
 
   // When the page is initialized:
   ngOnInit() {
-
     // This will call the getRoom() method from the AvailableRoom service.
     // By subscribing the data will be updating without the user having to refresh.
     // It will put all of the data into the rooms array and formatted as a available room model.
@@ -36,13 +35,26 @@ export class AvailableRoomComponent implements OnInit {
   }
 
   viewDetails(i) {
-    this.service.viewDetails(i, '5f31RvF6LKJCghBQJnPT');
+    this.service.viewDetails(i);
   }
-  test(i) {
-    this.service.test(i);
-  }
+
   // Returns a random number 1-6
   genRandomNum() {
     return Math.floor(Math.random() * 6) + 1;
+  }
+  range(num){
+    console.log(num);
+    var result = [];
+    for(var i=0;i < num;i++){
+      result.push("");
+    }
+    return result;
+  }
+
+  hasResult(){
+    var num = Math.floor(Math.random() * 6) + 1;
+    this.roomcount[this.count]="../../assets/images/room/"+""+num+".jpg";
+    this.count=this.count +1;
+    
   }
 }

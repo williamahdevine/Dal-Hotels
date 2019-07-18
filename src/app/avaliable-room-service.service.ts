@@ -11,10 +11,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
   providedIn: 'root'
 })
 export class AvaliableRoomServiceService {
-  detailId: string;
   index: number;
-  idDetail: number;
-  ind: number;
 
 
   // Initialize firebase and httpclient.
@@ -29,15 +26,10 @@ export class AvaliableRoomServiceService {
     return localStorage.getItem('i');
   }
 
-  viewDetails(i, id) {
+  viewDetails(i) {
     console.log('i = ' + i);
     this.index = i;
-    this.idDetail = id;
     localStorage.setItem('i', i);
-  }
-
-  test(i) {
-    alert('i = ' + i);
   }
 
 

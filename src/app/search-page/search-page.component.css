@@ -1,0 +1,33 @@
+.btn-room{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.btn-primary{
+    background-color:#7AA9DA;
+    border-color:#7AA9DA;
+}
+
+.btn-outline-secondary{
+    border-color: #7AA9DA;
+    color: #7AA9DA;
+}
+.no-side-padding{
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+}
+.no-top-padding{
+    padding-top:0 !important;
+}
+.has-side-padding{
+    padding-left: 20px !important;
+    padding-right:20px !important; 
+}
+.has-top-padding{
+    padding-top:10px;
+}
+.search-not-found{
+    width: 35%;
+}
