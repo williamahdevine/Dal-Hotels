@@ -23,30 +23,38 @@ The Feature was initially a single dropdown with the search query being performe
 
 ##References
 
+* Angular.io. (2019). Angular. Available at: https://angular.io/. 
 
+* Firebase. (2019). Firebase.  Available at: https://firebase.google.com/. 
 
 
 ##Links
 
-  http://129.173.22.35:26543/
+  -http://129.173.22.35:26543/
 
-  http://129.173.22.35:26543/search
+  -http://129.173.22.35:26543/search
 
-  http://129.173.22.35:26543/avaliable
+  -http://129.173.22.35:26543/avaliable
   
 
 ##Git
 
-  https://git.cs.dal.ca/agbola/web_project_group_7.git
+  -https://git.cs.dal.ca/agbola/web_project_group_7.git
+
 ##Feature Branch
 
-     search_feature_a4_submission
+    -search_feature_a4_submission
+     
 ##Files Worked On
 
-  src/app/search-filter
-  src/app/search-page
-  src/app/models/room-search.ts
-  src/app/home
+  -src/app/search-filter
+
+  -src/app/search-page
+
+  -src/app/models/room-search.ts
+
+  -src/app/home
+  
 
 
 
