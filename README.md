@@ -54,4 +54,5 @@ Then open the browser to http://localhost:4200/booking-record
 - https://git.cs.dal.ca/agbola/web_project_group_7.git
 -- branch -booking_history
 
-
+### Hosted link
+- http://129.173.22.35:21441/
