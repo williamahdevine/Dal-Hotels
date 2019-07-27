@@ -25,7 +25,7 @@ export class AuthService {
   }
   getCurrentUserData() {
     const document: AngularFirestoreDocument = this.firestore.doc('users/' + this.fireauth.auth.currentUser.uid);
-    const document$: Observable = document.valueChanges();
+    const document$: Observable<any> = document.valueChanges();
     return document$;
   }
   login(email, password) {
