@@ -1,25 +1,18 @@
-# Assignment 4
+# Web Development Project
 
-- Student Name: Agbola Iseoluwatobi 
+- Project - Group 7
 
-- Student ID: B00802526 
+- Student Name: Agbola Iseoluwatobi : Student ID: B00802526
 
-- Assignment 4 
+- Student Name: Devine	William A : Student ID: B00738273
 
-- Project - Group 7  
+- Student Name: Javadi	Nithisha : Student ID: B00824058
 
-## Feature: Search Feature  
+- Student Name: Jayachandran	Sithara : Student ID: B00824470
+
+- Student Name: Yang	Shuo : Student ID: B00606093 
 
 ## Overview 
-
-This feature involves the design of an interactive search bar for users of the application. 
-The backend received the queries sent to the frontend by the user and uses those queries to generate
-the set of the room which fit those criteria. the search bars filters are generated from the NoSql database and this helps the user to make 
-accurate results
-
-## Modifications 
-
-The Feature was initially a single dropdown with the search query being performed on one criterion however while developing the  search I discovered that a multi-varied search bar would be more suitable for the user and so I developed the search bar with 5   different filters to provide the user with an interactive way to search for rooms.
 
 ## References
 
@@ -28,35 +21,13 @@ The Feature was initially a single dropdown with the search query being performe
     * Firebase. (2019). Firebase.  Available at: https://firebase.google.com/. 
 
 
-## Links
+## Link
 
-  - http://129.173.22.35:26543/
-
-  - http://129.173.22.35:26543/search
-
-  - http://129.173.22.35:26543/avaliable
-  
+  - http://129.173.22.35:22111/
 
 ## Git
 
   - https://git.cs.dal.ca/agbola/web_project_group_7.git
-
-## Feature Branch
-
-    - search_feature_a4_submission
-     
-## Files Worked On
-
-  - src/app/search-filter
-
-  - src/app/search-page
-
-  - src/app/models/room-search.ts
-
-  - src/app/home
-
-
-
 
 ## Frameworks and technologies 
 
