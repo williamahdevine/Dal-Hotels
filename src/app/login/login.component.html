@@ -7,29 +7,33 @@
                     <h3 class="mb-0 title-bold text-center">Login</h3>
                     </div>
                     <div class="card-body">
-                    <form class="form" name="signUpForm" (ngSubmit)="onSubmit()" #signUpForm="ngForm" >
+                    <form class="form" method="post" name="signUpForm" (ngSubmit)="onSubmit()" #signUpForm="ngForm" >
                         <!-- Name -->
                         <div class="form-group">
-                                <label for="name">Name <span class="text-danger">*</span></label>
-                                <input class="login form-control form-control-lg rounded-0 input-rounded" type="text"
-                                        [(ngModel)]=model.username name="name"
-                                        required
-                                        placeholder="Bob Sagot"
-                                        #name="ngModel" />
-                                <div [hidden]="name.valid || name.pristine && name.untouched"
+                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <input id="email" class="login form-control form-control-lg rounded-0 input-rounded" type="email"
+                                       required
+                                       placeholder="Email"
+                                       name="email"
+                                       [(ngModel)]=model.email
+                                       [email] = "true"
+                                       #email="ngModel" />
+                                <div [hidden]="email.valid || email.untouched"
                                         class="alert alert-danger">
-                                    Invalid User Name
+                                    Invalid Email
                                 </div>
                             </div>
                             <!-- Password -->
                             <div class="form-group">
                                     <label for="password">Password <span class="text-danger">*</span></label>
-                                    <input class="login form-control form-control-lg rounded-0 input-rounded" type="password"
+                                    <input id="password" class="login form-control form-control-lg rounded-0 input-rounded" type="password"
                                             required
                                             placeholder="Password"
-                                            name="password" [(ngModel)]=model.password
-                                            #password="ngModel"/>
-                                    <div [hidden]="password.valid || password.pristine && password.untouched"
+                                            name="password"
+                                           [(ngModel)]=model.password
+                                           pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[/\$@$!%*#?&])[A-Za-z\d/\$@$!%*#?&]{8,20}$"
+                                           #password="ngModel"/>
+                                    <div [hidden]="password.valid || password.untouched"
                                             class="alert alert-danger">
                                             Invalid Password
                                     </div>

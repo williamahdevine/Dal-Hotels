@@ -11,28 +11,33 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(public auth : AuthService,private firestore: AngularFirestore,) { }
+  constructor(public auth: AuthService, private firestore: AngularFirestore) { }
 
-  model = new SignUpService('', '', '', '', '','');
+  model = new SignUpService('', '', '', '', '', '');
 
   submitted = false;
 
-  onSubmit() { this.submitted = true;
-    var that = this;
-     var signup = this.auth.signUP(this.model).then(data=>{
-      that.firestore.collection("users").doc(that.auth.getCurrentID()).set({fullname:that.model.name,gender:that.model.gender,phone:that.model.phone}).then(data =>{
-        location.href="/"
-      }).catch(error =>{
-        console.log(error)
-      })
-    }).catch(error=>{
-      console.log(error)
-       alert(error.message);
-      
-    })
+  onSubmit() {
+    this.submitted = true;
+    const that = this;
+    const signup = this.auth.signUP(this.model).then(data => {
+      that.firestore.collection('users').doc(that.auth.getCurrentID()).set({
+        fullname: that.model.name,
+        gender: that.model.gender,
+        phone: that.model.phone
+      }).then(data => {
+        location.href = '/';
+      }).catch(error => {
+        console.log(error);
+      });
+    }).catch(error => {
+      console.log(error);
+      alert(error.message);
+
+    });
     }
 
   ngOnInit() {
-      this.model = new SignUpService('', '', '', 'Male', '','');
+      this.model = new SignUpService('', '', '', 'Male', '', '');
   }
 }
