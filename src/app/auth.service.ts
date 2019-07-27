@@ -32,6 +32,10 @@ export class AuthService {
     return this.fireauth.auth.signInWithEmailAndPassword(email, password);
   }
 
+  updateEmail(email: string) {
+    this.fireauth.auth.currentUser.updateEmail(email);
+  }
+
   signOut() {
     return this.fireauth.auth.signOut();
   }
