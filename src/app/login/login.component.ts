@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +9,7 @@ import { SearchFilterComponent } from '../search-filter/search-filter.component'
 })
 export class LoginComponent implements OnInit {
 
-  constructor() {}
+  constructor(public auth : AuthService, public router : Router) {}
   public model ={username:"",password:""};
   public status;
   ngOnInit() {
@@ -21,9 +23,19 @@ export class LoginComponent implements OnInit {
     }else if(this.model.password==""){
       this.status = "Invalid Password";
     }else{
-      location.href="/";
+      this.login(this.model);
     }
     
+  }
+
+  login(model){
+    var that = this;
+    this.auth.login(model.username,model.password).then(data=>{
+      that.router.navigate(["/"])
+    }).catch(err=>{
+      console.log(err)
+      alert(err.message);
+    })
   }
 
 }

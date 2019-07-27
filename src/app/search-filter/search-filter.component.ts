@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { RoomSearchService } from '../models/room-search.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class SearchFilterComponent implements OnInit {
 
   public menuItem:string;
   //the constructor sets the Room Search Service 
-  constructor(public search : RoomSearchService) { 
+  constructor(public search : RoomSearchService,public router : Router) { 
     
   }
 

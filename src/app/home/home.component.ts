@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RoomSearchService } from '../models/room-search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,10 @@ export class HomeComponent implements OnInit {
 
   
   //the constructor sets the Room Search Service 
-  constructor(public search : RoomSearchService) { }
+  constructor(public search : RoomSearchService,public router : Router) { }
   // The variables are set
+  public rooms = [];
+  objectKeys = Object.keys;
   public menuItem:string;
   public Tag:string;
   public Ratings:string;
@@ -28,13 +31,17 @@ export class HomeComponent implements OnInit {
   public priceRange_Data:any;
   public Beds_Data:any;
   public RoomSize_Data:any;
-  objectKeys = Object.keys;
+  roomcount = [];
+  count = 0;
 
   ngOnInit() {
     //this sets all default values and calls default functions
+    this.rooms = this.search.getRecommendedRooms();
     this.menuItem = "All";
     this.getData();
     this.checkSession();
+    
+    console.log(this.rooms);
   }
 
   //this checks if a search query combination is stored in session storage
@@ -91,5 +98,31 @@ export class HomeComponent implements OnInit {
     this.query["Room Sizes"]=this.roomSize;
     sessionStorage.setItem("searchData", JSON.stringify(this.query));
     window.location.href = "/search";
+  }
+
+  searchLocation(Location){
+    this.query["Ratings"]=this.Ratings;
+    this.query["Locations"]=Location;
+    this.query["numberOfBeds"]=this.numberOfBeds;
+    this.query["price_range"]=this.priceRange;
+    this.query["price_data"]=this.priceRange_Data[this.priceRange];
+    this.query["Room Sizes"]=this.roomSize;
+    sessionStorage.setItem("searchData", JSON.stringify(this.query));
+    console.log(Location);
+    window.location.href = "/search";
+  }
+
+  range(num){
+    var result = [];
+    for(var i=0;i < num;i++){
+      result.push("");
+    }
+    return result;
+  }
+
+  hasResult(){
+    var num = Math.floor(Math.random() * 6) + 1;
+    this.roomcount[this.count]="../../assets/images/room/"+""+num+".jpg";
+    this.count=this.count +1;
   }
 }

@@ -80,3 +80,7 @@
     border-color: #00213F;
     background-color: transparent;
   }
+  .small{
+      font-size: 10px;
+      margin: 1px !important;
+  }

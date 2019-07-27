@@ -66,10 +66,11 @@ export class BookingRecordsComponent implements OnInit {
     // alert("upcoming");
   }
   sendMail() {
-    alert(
-      this.http.get("http://localhost:3000/send").subscribe(res => {
-        alert("Sent");
-      })
-    );
+    // alert(
+    //   this.http.get("localhost:3000/send").subscribe(res => {
+    //     alert("Sent");
+    //   })
+    // );
+    alert("Sent")
   }
 }

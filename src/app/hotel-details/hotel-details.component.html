@@ -9,12 +9,12 @@
         <h3 class="title-bold text-center">Room Type: {{rooms[ind].beds}} Beds</h3>
         <p><strong>Room Size:</strong> {{rooms[ind].size}} room</p>
         <p><strong>Cost:</strong> {{rooms[ind].cost | currency}} Per Night</p>
-        <p class="p-justify"><strong>Description:</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+        <p class="p-justify">{{rooms[ind].details}}</p>
         <div>
           <!-- Icon by Smashicons in FlatIcons -->
           <img *ngFor="let star of rooms[ind].rating" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" />
         </div>
-        <p class="p-content-room">Address: {{rooms[ind].distanceToCityCenter}} Per Night</p>
+        <p class="p-content-room">Address: {{rooms[ind].address}}</p>
         <button routerLink="/bookings" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room btn-margin">Book Now</button>
       </div>
       <div class="col-lg-4 small-img-box">

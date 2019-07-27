@@ -12,7 +12,8 @@ export class SearchPageComponent implements OnInit {
 //Student ID: B00802526
   rooms = [];
   objectKeys = Object.keys;
-  notFound = true;
+  notFound = false;
+  checked = true;
   roomcount = [];
   count = 0;
   constructor(private roomSearch: RoomSearchService ) { }
@@ -21,13 +22,21 @@ export class SearchPageComponent implements OnInit {
   ngOnInit() {
     // this calls the search function and stores the result in a variable  
     this.rooms=this.roomSearch.alt_search();
+    // if(sessionStorage.getItem("notFound")=="true"){
+    //   this.notFound = true;
+    // }
+    setTimeout(() => {
+      if(this.checked){
+        this.notFound = true;
+      }
+  }, 2000);
   }
   // this is used to set the images that will be shown of the rooms
   hasResult(){
     var num = Math.floor(Math.random() * 6) + 1;
     this.roomcount[this.count]="../../assets/images/room/"+""+num+".jpg";
     this.count=this.count +1;
-    this.notFound = false;
+    this.checked = false;
   }
   //this creates and array to run the loop and display the number of stars
   range(num){

@@ -35,7 +35,7 @@ export class AvailableRoomComponent implements OnInit {
   }
 
   viewDetails(i) {
-    this.service.viewDetails(i);
+    this.service.viewDetails(i, '5f31RvF6LKJCghBQJnPT');
   }
   test(i) {
     this.service.test(i);

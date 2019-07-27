@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { AvaliableRoomServiceService } from '../avaliable-room-service.service';
 import { BookingService } from '../booking.service';
 import { AvailableRoom } from '../shared/available-room.model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+declare let paypal: any;
 
 @Component({
   selector: 'app-bookings',
@@ -11,6 +12,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
+  
   public rooms: AvailableRoom[];
   public nightArray = [];
   public total = 1000;
@@ -42,6 +44,7 @@ export class BookingsComponent implements OnInit {
     this.RoomID = this.route.snapshot.paramMap.get('id');
 
     this.localStorageChecker();
+    
   }
   localStorageChecker(){
     if(!localStorage.getItem("booking")){
@@ -112,6 +115,31 @@ export class BookingsComponent implements OnInit {
         
       });
     }
+    var that = this;
+    paypal.Buttons({
+
+      // Set up the transaction
+      createOrder: function(data, actions) {
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: ''+that.totalBookingCost()+''
+                  }
+              }]
+          });
+      },
+
+      // Finalize the transaction
+      onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+              // Show a success message to the buyer
+              alert('Transaction completed by ');
+              location.href="/";
+          });
+      }
+
+
+  }).render('#paypal-button');
   }
   Redeemed() {
     if (this.isRedeemed == false) {
@@ -154,8 +182,9 @@ export class BookingsComponent implements OnInit {
   }
 
   BookingComplete() {
-    alert('Booking Complete');
-    location.href = '/';
+    
+    // alert('Booking Complete');
+    // location.href = '/';
   }
 
 

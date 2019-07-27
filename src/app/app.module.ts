@@ -21,6 +21,7 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -52,6 +53,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

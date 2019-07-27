@@ -106,6 +106,7 @@ export class RoomSearchService {
   alt_search(){
     var that = this;
     let data = sessionStorage.getItem('searchData');
+    var notFound = true;
     if(data){
       var sessionData = JSON.parse(data);
       var Ratings = sessionData["Ratings"];
@@ -136,11 +137,26 @@ export class RoomSearchService {
     
       db.get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
+          notFound=false;
           that.rooms[doc.id]= doc.data();
         });
     });
+    sessionStorage.setItem("notFound",""+notFound);
       return this.rooms;
     }
+  }
+
+  getRecommendedRooms(){
+    this.rooms = [];
+    var db; 
+    var that = this;
+    db = this.firestore.collection("rooms").ref.where('ratings','==',5).limit(6);
+    db.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        that.rooms[doc.id]= doc.data();
+      });
+  });
+  return this.rooms;
   }
 
   //this checks if the Ratings have been filtered 

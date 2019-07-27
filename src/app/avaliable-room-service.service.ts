@@ -13,6 +13,10 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
 export class AvaliableRoomServiceService {
   detailId: string;
   index: number;
+  idDetail: number;
+  ind: number;
+
+
   // Initialize firebase and httpclient.
   constructor(private http: HttpClient, private firestore: AngularFirestore) { }
 
@@ -21,26 +25,21 @@ export class AvaliableRoomServiceService {
     return this.firestore.collection('rooms').snapshotChanges();
   }
 
-  getRoomDetails() {
-    return this.firestore.collection('rooms').doc('5f31RvF6LKJCghBQJnPT').snapshotChanges();
-  }
-
   getDetailsId() {
-    return this.detailId;
+    return localStorage.getItem('i');
   }
 
-  viewDetails(i) {
+  viewDetails(i, id) {
     console.log('i = ' + i);
     this.index = i;
+    this.idDetail = id;
+    localStorage.setItem('i', i);
   }
 
   test(i) {
     alert('i = ' + i);
   }
-  getIndex() {
-    return this.index;
-    // return 0;
-  }
+
 
 
 }

@@ -17,28 +17,31 @@ export class HotelDetailsComponent implements OnInit {
   rooms: AvailableRoom[];
   currentImg: number;
   ind: number;
+  id: number;
+
   constructor(private service: AvaliableRoomServiceService) {
   }
 
   ngOnInit() {
-    this.ind = this.service.getIndex();
-    // this.rooms = this.roomService.getRooms();
+    // Will retreive the index of the room (selected room)
+    this.ind = +this.service.getDetailsId();
+    console.log('I = ' + this.service.getDetailsId());
+
+    // This will call the getRoom() method from the AvailableRoom service.
+    // By subscribing the data will be updating without the user having to refresh.
+    // It will put all of the data into the rooms array and formatted as a available room model.
     this.service.getRooms().subscribe(actionArray => {
       this.rooms = actionArray.map(item => {
-        // if (item.payload.doc.id === '5f31RvF6LKJCghBQJnPT') {
         return {
           id: item.payload.doc.id,
           ...item.payload.doc.data()
         } as AvailableRoom;
-        // }
       });
-      console.log(this.rooms);
+      // console.log(this.rooms);
     });
   }
 
-// getIndex() {
-//     return 0;
-// }
+  // Generate random num 1-6
   genRandomNum() {
     this.currentImg = Math.floor(Math.random() * 6) + 1;
   }

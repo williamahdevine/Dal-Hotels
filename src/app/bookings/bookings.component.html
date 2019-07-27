@@ -23,7 +23,11 @@
                                 <td></td>
                               </tr>
                                 <tr>
-                                    <td class="text-left" colspan="3"><button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                                    <td class="text-left">
+                                    <!--<button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>-->
+                                    <div id="paypal-button"></div>
+                                    </td>
+                                    <td class="text-left" colspan="2">
                                     <button class="btn btn-outline-secondary btn-rounded pay-btn" (click)="payOnCheckIn()">Pay on Check In</button>
                                     <button class="btn btn-secondary btn-rounded pay-btn" (click)="Redeemed()">{{RedeemedStatus}}</button></td>
                                     <td class="text-right"><strong>Total Cost:${{totalBookingCost()}}</strong></td>
