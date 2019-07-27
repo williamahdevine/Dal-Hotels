@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   public newletter:string;
-  constructor() { }
+  public isLoggedIn = false;
+  constructor(public auth : AuthService) { }
 
   ngOnInit() {
     this.newletter="";
+    this.userStatus();
+  }
+
+  userStatus(){
+    var that = this;
+    this.auth.checkLoginStatus().onAuthStateChanged(function (user){
+      if(user){
+        that.isLoggedIn = true;
+      }else{
+        that.isLoggedIn = false;
+      }
+    })
   }
 
   newsLetterADD(){
@@ -23,6 +37,15 @@ export class FooterComponent implements OnInit {
       this.newletter="";
     }
     
+  }
+
+  logout(){
+    alert("test")
+    this.auth.signOut().then(data =>{
+      console.log(data)
+    }).catch(err =>{
+      console.log(err.message);
+    })
   }
 
 }

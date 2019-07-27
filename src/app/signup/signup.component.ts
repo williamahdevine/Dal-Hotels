@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { SignUpService } from '../models/sign-up.service';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -9,18 +11,28 @@ import { SignUpService } from '../models/sign-up.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth : AuthService,private firestore: AngularFirestore,) { }
 
-  model = new SignUpService('', '', '', '', '');
+  model = new SignUpService('', '', '', '', '','');
 
   submitted = false;
 
   onSubmit() { this.submitted = true;
-                alert("Account Created");
-                location.href="/"
- }
+    var that = this;
+     var signup = this.auth.signUP(this.model).then(data=>{
+      that.firestore.collection("users").doc(that.auth.getCurrentID()).set({fullname:that.model.name,gender:that.model.gender,phone:that.model.phone}).then(data =>{
+        location.href="/"
+      }).catch(error =>{
+        console.log(error)
+      })
+    }).catch(error=>{
+      console.log(error)
+       alert(error.message);
+      
+    })
+    }
 
   ngOnInit() {
-      this.model = new SignUpService('', '', '', '', '');
+      this.model = new SignUpService('', '', '', 'Male', '','');
   }
 }

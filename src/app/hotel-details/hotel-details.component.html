@@ -1,32 +1,36 @@
+<!--William Devine-->
+<!-- Print all data for the room that the user clicked on. -->
+
 <app-search-filter></app-search-filter>
 <section class="section-gray section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <h3 class="title-bold text-center">Room Type: {{rooms[0].beds}} Beds</h3>
-                <p><strong>Room Size:</strong> {{rooms[0].size}} room</p>
-                <p><strong>Cost:</strong> {{rooms[0].cost | currency}} Per Night</p>
-                <p class="p-justify"><strong>Description:</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                <div>
-                  <!-- Icon by Smashicons in FlatIcons -->
-                  <img *ngFor="let star of rooms[0].rating" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" />
-              </div>
-              <p class="p-content-room">Address: {{rooms[0].distanceToCityCenter}} Per Night</p>
-              <button routerLink="/bookings" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room btn-margin">Book Now</button>
-            </div>
-            <div class="col-lg-4 small-img-box">
-                    <img class="img-responsive maintain" src="{{rooms[0].img}}{{currentImg}}.jpg" alt="{{rooms[0].img}}{{genRandomNum()}}.jpg">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}1.jpg" alt="{{rooms[0].img}}1.jpg" (click)="changeImage(1)"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}2.jpg" alt="{{rooms[0].img}}2.jpg" (click)="changeImage(2)"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}3.jpg" alt="{{rooms[0].img}}3.jpg" (click)="changeImage(3)"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}4.jpg" alt="{{rooms[0].img}}4.jpg" (click)="changeImage(4)"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}5.jpg" alt="{{rooms[0].img}}5.jpg" (click)="changeImage(5)"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[0].img}}6.jpg" alt="{{rooms[0].img}}6.jpg" (click)="changeImage(6)"></div>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h3 class="title-bold text-center">Room Type: {{rooms[ind].beds}} Beds</h3>
+        <p><strong>Room Size:</strong> {{rooms[ind].size}} room</p>
+        <p><strong>Cost:</strong> {{rooms[ind].cost | currency}} Per Night</p>
+        <p class="p-justify">{{rooms[ind].details}}</p>
+        <div>
+          <!-- Icon by Smashicons in FlatIcons -->
+          <img *ngFor="let star of rooms[ind].rating" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" />
         </div>
+        <p class="p-content-room">Address: {{rooms[ind].address}}</p>
+        <button routerLink="/bookings" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room btn-margin">Book Now</button>
+      </div>
+      <div class="col-lg-4 small-img-box">
+        <img class="img-responsive maintain" src="{{rooms[ind].img}}{{currentImg}}.jpg" alt="{{rooms[ind].img}}{{genRandomNum()}}.jpg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}1.jpg" alt="{{rooms[ind].img}}1.jpg" (click)="changeImage(1)"></div>
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}2.jpg" alt="{{rooms[ind].img}}2.jpg" (click)="changeImage(2)"></div>
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}3.jpg" alt="{{rooms[ind].img}}3.jpg" (click)="changeImage(3)"></div>
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}4.jpg" alt="{{rooms[ind].img}}4.jpg" (click)="changeImage(4)"></div>
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}5.jpg" alt="{{rooms[ind].img}}5.jpg" (click)="changeImage(5)"></div>
+            <div class="col-lg-4 col-md-4 col-sm-2 col-4 small-img-box"><img class="img-responsive small-img" src="{{rooms[ind].img}}6.jpg" alt="{{rooms[ind].img}}6.jpg" (click)="changeImage(6)"></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+

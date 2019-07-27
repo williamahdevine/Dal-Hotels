@@ -4,7 +4,7 @@
         <div class="col-lg-3 col-md-2 col-sm-2 text-center">
             <a class="navbar-brand" href="#"><img class="logo footer-logo" src="assets/images/logo/Logo-blue.svg" alt="Logo-alt"/></a>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2">
+        <div class="col-lg-2 col-md-2 col-sm-2" *ngIf="!isLoggedIn">
           <ul class="footer-ui">
             <li class="footer-li">
               <a class="footer-li" routerLink="/" routerLinkActive="active">Home</a>
@@ -17,16 +17,42 @@
             </li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2"> 
+        <div class="col-lg-2 col-md-2 col-sm-2" *ngIf="isLoggedIn">
+          <ul class="footer-ui">
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/avaliable" routerLinkActive="active">Available Rooms</a>
+            </li>
+            <li class="footer-li">
+              <a class="footer-li" routerLink="/booking-record" routerLinkActive="active">Booking Record</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2" *ngIf="!isLoggedIn"> 
+            <ul class="footer-ui">
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/search">Find Rooms</a>
+                </li>
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/avaliable">Rooms</a>
+                </li>
+                <li class="footer-li">
+                  <a class="footer-li" routerLink="/contact" routerLinkActive="active">Contact</a>
+                </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2" *ngIf="isLoggedIn"> 
             <ul class="footer-ui">
                 <li class="footer-li">
                   <a class="footer-li" routerLink="/profile" routerLinkActive="active">Profile</a>
                 </li>
                 <li class="footer-li">
-                  <a class="footer-li" routerLink="/feedback" routerLinkActive="active">Feedback</a>
+                  <a class="footer-li"  (click)="logout()">Logout</a>
                 </li>
                 <li class="footer-li">
-                  <a class="footer-li" routerLink="/contact" routerLinkActive="active">Contact</a>
+                  <a class="footer-li" routerLink="/contact" routerLinkActive="active">Feedback</a>
                 </li>
             </ul>
           </div>

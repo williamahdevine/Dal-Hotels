@@ -20,6 +20,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { SearchPageComponent } from './search-page/search-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +42,8 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
     ConfirmEqualValidatorDirective,
     SearchFilterComponent,
     HotelDetailsComponent,
-    BookingRecordsComponent
+    BookingRecordsComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,9 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

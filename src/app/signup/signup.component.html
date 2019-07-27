@@ -40,6 +40,14 @@
                                       Enter valid email
                                     </div>
                                 </div>
+                                <!-- Gender -->
+                                <div class="form-group">
+                                    <label for="gender">Gender <span class="text-danger">*</span></label>
+                                    <select class="signUp form-control form-control-lg rounded-0 input-rounded" required [(ngModel)]=model.gender>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
                                 <!-- Phone -->
                                 <div class="form-group">
                                     <label for="phone">Phone <span class="text-danger">*</span></label>

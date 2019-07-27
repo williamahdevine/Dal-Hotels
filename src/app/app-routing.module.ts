@@ -10,17 +10,19 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'avaliable',component:AvailableRoomComponent},
   {path:'sign-up',component:SignupComponent},
-  {path:'bookings',component:BookingsComponent},
+  {path:'bookings/:id',component:BookingsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'feedback',component:FeedbackComponent},
   {path:'contact',component:ContactUsComponent},
   {path:'room-detail',component:HotelDetailsComponent},
   {path:'booking-record',component:BookingRecordsComponent},
+  {path:'search',component:SearchPageComponent},
   {path:'',component:HomeComponent}
 ];
 
