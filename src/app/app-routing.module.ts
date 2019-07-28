@@ -11,19 +11,21 @@ import { HomeComponent } from './home/home.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import {AuthGuard} from './auth.guard';
+
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'avaliable',component:AvailableRoomComponent},
-  {path:'sign-up',component:SignupComponent},
-  {path:'bookings/:id',component:BookingsComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'feedback',component:FeedbackComponent},
-  {path:'contact',component:ContactUsComponent},
-  {path:'room-detail',component:HotelDetailsComponent},
-  {path:'booking-record',component:BookingRecordsComponent},
-  {path:'search',component:SearchPageComponent},
-  {path:'',component:HomeComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'avaliable', component: AvailableRoomComponent},
+  {path: 'sign-up', component: SignupComponent},
+  {path: 'bookings/:id', component: BookingsComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard]},
+  {path: 'contact', component: ContactUsComponent},
+  {path: 'room-detail', component: HotelDetailsComponent},
+  {path: 'booking-record', component: BookingRecordsComponent, canActivate: [AuthGuard]},
+  {path: 'search', component: SearchPageComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
