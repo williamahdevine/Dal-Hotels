@@ -12,13 +12,8 @@ export class AuthService {
 
   constructor(private firestore: AngularFirestore, private fireauth: AngularFireAuth) {}
 
-  get authenticated(): boolean {
-    this.fireauth.auth.onAuthStateChanged(user => {
-      if (user) {
-        return true;
-      }
-    });
-    return false;
+  authenticated(){
+    return this.fireauth.auth;
   }
 
 
