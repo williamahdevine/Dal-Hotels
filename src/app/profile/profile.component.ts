@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../models/user.service';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { AuthService } from '../auth.service';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {Subscription} from 'rxjs';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {Observable, Subscription} from 'rxjs';
+import {SignUpService} from '../models/sign-up.service';
 
 
 @Component({
@@ -17,6 +17,12 @@ export class ProfileComponent implements OnInit {
   user = [];
   isEditing = false;
   message = '';
+
+  model = {fullname: '', gender: '', phone: '', email: ''};
+
+
+  private itemDoc: AngularFirestoreDocument<any>;
+  item: Observable<any>;
 
   constructor(public auth: AuthService, private firestore: AngularFirestore) {
   }
@@ -41,9 +47,24 @@ export class ProfileComponent implements OnInit {
     return !this.isEditing;
   }
   saveUser() {
+    console.log(this.model);
+    if (this.model.fullname === '') {
+      this.model.fullname = this.user["fullname"];
+    }
+    if (this.model.gender === '') {
+      this.model.gender = this.user["gender"];
+    }
+    if (this.model.phone === '') {
+      this.model.phone = this.user["phone"];
+    }
+    if (this.model.email === '') {
+      this.model.email = this.user["email"];
+    }
+
+    this.itemDoc.update(this.model);
     this.message = 'Successfully Saved';
     this.isEditing = !this.isEditing;
-    console.log(this.message);
+    this.auth.updateEmail(this.model.email);
   }
   setEditing() {
     this.message = '';

@@ -13,8 +13,8 @@ export class UserService {
     return this.firestore.collection('rooms').snapshotChanges();
   }
 
-  getUser() {
-    return firebase.auth().currentUser;
-  }
+  // getUser() {
+  //   return firebase.auth().currentUser;
+  // }
 
 }

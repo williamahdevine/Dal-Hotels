@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
 
-  //Contact US form validation code referred from https://jasonwatmore.com/post/2018/11/07/ 
+  // Contact US form validation code referred from https://jasonwatmore.com/post/2018/11/07/
   validateForm: FormGroup;
   submitted = false;
   router: any;
@@ -36,7 +36,7 @@ export class ContactUsComponent implements OnInit {
 
     alert('Your Message has been sent succesfully !!');
 
-    //return to Home page
+    // return to Home page
     location.href = '/';
 
   }

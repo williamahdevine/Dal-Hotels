@@ -9,7 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private phone: string;
-  constructor(private firestore: AngularFirestore, private fireauth: AngularFireAuth) { }
+
+  constructor(private firestore: AngularFirestore, private fireauth: AngularFireAuth) {}
+
+  get authenticated(): boolean {
+    this.fireauth.auth.onAuthStateChanged(user => {
+      if (user) {
+        return true;
+      }
+    });
+    return false;
+  }
+
 
   signUP(userInfo) {
     const result = '';
@@ -18,7 +29,7 @@ export class AuthService {
   }
 
   getCurrentID() {
-    return this.fireauth.auth.currentUser.uid;
+      return 'Ftf1lFhmfafrgRUEZqf4r8p9UZk2';
   }
   getCurrentEmail() {
     return this.fireauth.auth.currentUser.email;
@@ -32,6 +43,10 @@ export class AuthService {
     return this.fireauth.auth.signInWithEmailAndPassword(email, password);
   }
 
+  updateEmail(email: string) {
+    this.fireauth.auth.currentUser.updateEmail(email);
+  }
+
   signOut() {
     return this.fireauth.auth.signOut();
   }
@@ -39,4 +54,6 @@ export class AuthService {
   checkLoginStatus() {
     return this.fireauth.auth;
   }
+
+
 }
