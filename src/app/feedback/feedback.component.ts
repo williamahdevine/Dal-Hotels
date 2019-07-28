@@ -41,6 +41,7 @@ Feedbacks:Observable<Feedback[]>;
   ngOnInit() {
     this.FeedbackColl=this.afs.collection('Feedback');
     this.Feedbacks=this.FeedbackColl.valueChanges();
+    this.setUserName();
 
   }
 
@@ -51,6 +52,7 @@ Feedbacks:Observable<Feedback[]>;
   'Date':this.date1})
     // alert message
       alert("Your feedback was added Succesfully");
+      this.setUserName();
   }
 
   //Sorting the feedbacks by Rating
@@ -69,7 +71,7 @@ Feedbacks:Observable<Feedback[]>;
   setUserName(){
     var that =  this;
     this.auth.getCurrentUserData().subscribe(data =>{
-      that.name1 = data.email;
+      that.name1 = data.fullname;
     })
   }
 }
