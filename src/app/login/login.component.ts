@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(public auth : AuthService, public router : Router) {}
-  private model ={username:"",password:""};
+  private model ={email:"",password:""};
   public status;
   ngOnInit() {
   }
   onSubmit(){
     // console.log(this.model);
-    if(this.model.username=="" && this.model.password==""){
+    if(this.model.email=="" && this.model.password==""){
       this.status = "Invalid Username and password";
-    }else if(this.model.username==""){
+    }else if(this.model.email==""){
       this.status = "Invalid Username";
-    }else if(this.model.password==""){
+    }else if(this.model.email==""){
       this.status = "Invalid Password";
     }else{
       this.login(this.model);
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   login(model){
     var that = this;
-    this.auth.login(model.username,model.password).then(data=>{
+    this.auth.login(model.email,model.password).then(data=>{
       that.router.navigate(["/"])
     }).catch(err=>{
       console.log(err)

@@ -24,9 +24,9 @@ export class AuthService {
     return this.fireauth.auth.currentUser.email;
   }
   getCurrentUserData() {
-    const document: AngularFirestoreDocument = this.firestore.doc('users/' + this.fireauth.auth.currentUser.uid);
-    const document$: Observable = document.valueChanges();
-    return document$;
+    var user = this.getCurrentID();
+    const document: AngularFirestoreDocument = this.firestore.doc('users/'+user);
+    return document.valueChanges();
   }
   login(email, password) {
     return this.fireauth.auth.signInWithEmailAndPassword(email, password);
