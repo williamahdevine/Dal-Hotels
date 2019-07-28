@@ -8,6 +8,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Feedback } from '../shared/feedback';
 import { AngularFirestore ,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ FeedbackColl: AngularFirestoreCollection<Feedback>;
 Feedbacks:Observable<Feedback[]>;
 
 // Introducting AngularFireDatabase Dependency into the Constructor
-  constructor(private afs: AngularFirestore) { }
+  constructor(public auth: AuthService,private afs: AngularFirestore) { }
 
 //  The code was referred from Coursetro.com. (2019). Use Angular with Google's Cloud Firestore - Tutorial. [online] 
 //  Available at: https://coursetro.com/posts/code/94/Use-Angular-with-Google's-Cloud-Firestore---Tutorial [Accessed 13 Jul. 2019].
@@ -63,5 +64,12 @@ Feedbacks:Observable<Feedback[]>;
   sortByDate(){
     this.FeedbackColl = this.afs.collection<Feedback>('Feedback', ref => ref.orderBy('Date','asc'));
     this.Feedbacks=this.FeedbackColl.valueChanges();
+  }
+
+  setUserName(){
+    var that =  this;
+    this.auth.getCurrentUserData().subscribe(data =>{
+      that.name1 = data.email;
+    })
   }
 }

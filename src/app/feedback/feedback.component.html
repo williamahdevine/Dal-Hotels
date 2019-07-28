@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label>Name: <span class="text-danger">*</span></label>
                     <input class="reviewForm form-control w-100" type="text" [(ngModel)]="name1" name="by"
-                        #name="ngModel" placeholder="John Henry" required>
+                        #name="ngModel" placeholder="John Henry" required disabled>
                     <div [hidden]="name.valid || name.pristine && name.untouched" class="alert alert-danger">
                         Name is required
                     </div>

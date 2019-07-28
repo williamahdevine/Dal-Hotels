@@ -44,19 +44,18 @@ export class AvailableRoomComponent implements OnInit {
   genRandomNum() {
     return Math.floor(Math.random() * 6) + 1;
   }
-  range(num){
+  range(num) {
     console.log(num);
-    var result = [];
-    for(var i=0;i < num;i++){
-      result.push("");
+    const result = [];
+    for (let i = 0; i < num; i++) {
+      result.push('');
     }
     return result;
   }
 
-  hasResult(){
-    var num = Math.floor(Math.random() * 6) + 1;
-    this.roomcount[this.count]="../../assets/images/room/"+""+num+".jpg";
-    this.count=this.count +1;
-    
+  hasResult() {
+    const num = Math.floor(Math.random() * 6) + 1;
+    this.roomcount[this.count] = '../../assets/images/room/' + '' + num + '.jpg';
+    this.count = this.count + 1;
   }
 }

@@ -4,6 +4,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-4 text-center">
             <img src="./assets/images/profile/dp.png" class="img-circle profile-img grow" />
+            <!--https://www.google.com/search?q=profile+photo&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiUg4KLjdbjAhUNTd8KHQPlAMIQ_AUIESgB&biw=960&bih=881#imgdii=wP7YxjBjUg57VM:&imgrc=2DnrLk3Tlyfo4M:-->
             <button class="btn btn-primary btn-rounded btn-color" (click)="this.setEditing()">Edit Profile</button>
             <br>
             <button class="btn btn-outline-primary blue-outline btn-margin btn-rounded" routerLink="/booking-record" routerLinkActive="active">Booking History</button>
@@ -14,20 +15,20 @@
           </div>
           <div class="col-sm-12 col-md-8">
             <h4 class="text-success">{{ this.message }}</h4>
-      
-            <form action="">
+
+            <form class="form" name="editProfile" (ngSubmit)="onSubmit()" #editProfile="ngForm">
               <div class="form-group col-md-9">
-                <label>First Name</label>
-                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.firstName }}"/>
+                <label>Name</label>
+                <input [disabled]="this.getEditing()"  name="fullname" type="text" class="form-control input-rounded" [(ngModel)]="user['fullname']"/>
               </div>
-              <div class="form-group col-md-9">
-                <label>Last Name</label>
-                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.lastName }}"/>
-              </div>
+              <!--<div class="form-group col-md-9">-->
+                <!--<label>Last Name</label>-->
+                <!--<input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.lastName }}"/>-->
+              <!--</div>-->
               <div class="form-group col-md-9">
                 <label>Gender</label>
                 <select
-                  [disabled]="this.getEditing()" class="form-control input-rounded" value="{{ user.gender }}">
+                  [disabled]="this.getEditing()" name="gender" class="form-control input-rounded" [(ngModel)]="user['gender']">
                   <option>--Select Gender--</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -35,23 +36,21 @@
               </div>
               <div class="form-group col-md-9">
                 <label>Phone</label>
-                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.phone }}"
-                />
+                <input [disabled]="this.getEditing()" name="phone" type="text" class="form-control input-rounded" [(ngModel)]="user['phone']"/>
               </div>
               <div class="form-group col-md-9">
                 <label>Email</label>
-                <input [disabled]="this.getEditing()" type="text" class="form-control input-rounded" value="{{ user.email }}"
-                />
+                <input [disabled]="this.getEditing()" name="email" type="text" class="form-control input-rounded" [(ngModel)]="user['email']"/>
               </div>
-      
+
               <div class="form-group col-md-9 text-center">
                 <input [disabled]="this.getEditing()" class="col-md-4 btn btn-outline-primary btn-rounded"  type="button" value="Submit" (click)="this.saveUser()"/>
               </div>
             </form>
-      
+
           </div>
         </div>
-      
+
       </div>
 </section>
 
