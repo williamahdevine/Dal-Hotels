@@ -38,7 +38,8 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-  ngOnInit() {}
+  ngOnInit() {  this.model = {fullname: '', gender: '', phone: '', email: ''};
+  }
   getEditing() {
     // this.isEditing = !this.isEditing;
     this.message = '';
