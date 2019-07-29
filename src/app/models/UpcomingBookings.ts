@@ -1,6 +1,9 @@
  export class UpcomingBookings {
-    ref: string;
-	date: string;
-    price: number;
-    nights: number;
+   uid: string;
+   referenceNumber: number;
+   date: number;
+   price: number;
+   nights: number;
+   points: number;
+   status: any;
 }

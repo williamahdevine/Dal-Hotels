@@ -49,6 +49,11 @@ export class AuthService implements OnInit {
     const document$: Observable<any> = document.valueChanges();
     return document$;
   }
+  getCurrentHist() {
+    const document: AngularFirestoreDocument = this.firestore.doc('bookingRecord/yR56iLtHJCFzXjTXUQ2Y');
+    const document$: Observable<any> = document.valueChanges();
+    return document$;
+  }
   login(email, password) {
     this.userStatus();
     return this.fireauth.auth.signInWithEmailAndPassword(email, password);

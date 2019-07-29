@@ -3,7 +3,6 @@
 <section class="section-gray">
     <div class="container content" >
         <div class="row mt-3" >
-
             <div class="col-lg-12">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
@@ -13,7 +12,6 @@
                       <a [ngClass]="show ? 'active' : '' " class="nav-link" (click)="showUpcoming()">Upcoming Bookings</a>
                   </li>
                 </ul>
-
                 <div id="historyTab" class="mt-5" *ngIf="!show" >
                     <h4 class="text-center title-bold">Booking History</h4>
                     <table class="mt-5 table table-hover">
@@ -28,11 +26,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center" *ngFor="let booking of bookingHistory">
-                                <td>{{ booking.ref }}</td>
-                                <td>{{ booking.date }}</td>
-                                <td>{{ booking.price | currency}}</td>
-                                <td>{{ booking.pointsEarned }}pts</td>
+                            <tr class="text-center" *ngFor="let hbooking of bookingHistory">
+                                <td>{{ hbooking.referenceNumber }}</td>
+                                <td>{{ hbooking.date }}</td>
+                                <td>{{ hbooking.price | currency}}</td>
+                                <td>{{ hbooking.points }}pts</td>
                                 <td>
                                     <a href="assets/pdf/receipt.pdf" download><button class="btn btn-outline-secondary outline-button-blue"  href="/assets/pdf/receipt.pdf" download >View</button></a>
                                 </td>
@@ -56,13 +54,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center" *ngFor="let booking of upcomingBookings; let i = index" [attr.data-index]="i">
-                              <td>{{ booking.ref }}</td>
-                                <td>{{ booking.date }}</td>
-                                <td>{{ booking.price | currency}}</td>
-                                <td>{{ booking.nights }}</td>
+                            <tr class="text-center" *ngFor="let ubooking of upcomingBookings; let i = index" [attr.data-index]="i">
+                              <td>{{ ubooking.referenceNumber }}</td>
+                                <td>{{ ubooking.date }}</td>
+                                <td>{{ ubooking.price | currency}}</td>
+                                <td>{{ ubooking.nights }}</td>
                                 <td>
-                                    <button  [disabled]="!booking.status" [ngClass]="booking.status?'btn btn-danger':'btn btn-default text-danger disabled'"  (click)="cancel(booking,i)">{{booking.status?'Cancel':'Cancelled'}}</button>
+                                    <button [disabled]="ubooking.status" [ngClass]="ubooking.status?'btn btn-default text-danger disabled':'btn btn-danger'"  (click)="cancel(ubooking,i)">{{ubooking.status?'Cancelled':'Cancel'}}</button>
                                 </td>
                             </tr>
                         </tbody>
