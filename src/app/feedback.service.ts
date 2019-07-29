@@ -6,7 +6,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
 import { Feedback } from '../app/models/Feedback';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class FeedbackService {
   feedbackUrl:string = '../../assets/data/reviews.json';

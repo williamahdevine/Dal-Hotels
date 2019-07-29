@@ -35,7 +35,6 @@ export class ContactUsComponent implements OnInit {
     if (this.validateForm.invalid) {
       return;
     }
-
     this.feedback.sendContactUs(this.validateForm.value).then(data =>{
       alert('Your Message has been sent succesfully !!');
 
