@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +11,7 @@ export class FooterComponent implements OnInit {
 
   public newletter:string;
   public isLoggedIn = false;
-  constructor(public auth : AuthService) { }
+  constructor(public auth : AuthService, public feedback : FeedbackService) { }
 
   ngOnInit() {
     this.newletter="";
@@ -29,11 +30,24 @@ export class FooterComponent implements OnInit {
   }
 
   newsLetterADD(){
-    console.log(this.newletter);
+    
+    var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+    if (this.newletter == '' || !re.test(this.newletter))
+    {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+    
     if(this.newletter === ""){
       alert("Field Empty");
     }else{
-      alert("Success Adding Field");
+      if(this.isLoggedIn){
+        this.feedback.addNewsLetter(this.newletter).then(data =>{
+          alert("Email Added to newsletter")
+        })
+      }else{
+        alert("Login to add email to newsletter");
+      }
       this.newletter="";
     }
     
@@ -47,5 +61,7 @@ export class FooterComponent implements OnInit {
       console.log(err.message);
     })
   }
+
+  
 
 }
