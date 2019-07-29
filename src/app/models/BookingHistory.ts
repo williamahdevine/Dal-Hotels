@@ -1,6 +1,9 @@
 export class BookingHistory {
-    ref: string;
-	date: string;
-    price: number;
-    pointsEarned: number;
+  uid: string;
+  referenceNumber: number;
+  date: number;
+  price: number;
+  nights: number;
+  points: number;
+  status: any;
 }
