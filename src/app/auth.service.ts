@@ -17,19 +17,8 @@ export class AuthService implements OnInit {
 
   constructor(private firestore: AngularFirestore, private fireauth: AngularFireAuth) {}
 
-  ngOnInit() {
-    this.userStatus();
-  }
-
-  userStatus() {
-    const that = this;
-    this.fireauth.auth.onAuthStateChanged(user => {
-      if (user) {
-        that._isLoggedIn = true;
-      } else {
-        that._isLoggedIn = false;
-      }
-    });
+  authenticated(){
+    return this.fireauth.auth;
   }
 
   signUP(userInfo) {
@@ -45,14 +34,9 @@ export class AuthService implements OnInit {
     return this.fireauth.auth.currentUser.email;
   }
   getCurrentUserData() {
-    const document: AngularFirestoreDocument = this.firestore.doc('users/' + this.fireauth.auth.currentUser.uid );
-    const document$: Observable<any> = document.valueChanges();
-    return document$;
-  }
-  getCurrentHist() {
-    const document: AngularFirestoreDocument = this.firestore.doc('bookingRecord/yR56iLtHJCFzXjTXUQ2Y');
-    const document$: Observable<any> = document.valueChanges();
-    return document$;
+    var user = this.getCurrentID();
+    const document: AngularFirestoreDocument = this.firestore.doc('users/'+user);
+    return document.valueChanges();
   }
   login(email, password) {
     this.userStatus();

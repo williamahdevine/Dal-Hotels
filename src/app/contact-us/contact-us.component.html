@@ -13,7 +13,7 @@
                     <div class="form-group">
                       
                       <label>Please Choose Subject</label>
-                      <select class="form-control input-rounded">
+                      <select formControlName="subject" class="form-control input-rounded"  >
                         <option value="selected">- Please Select -</option>
                         <option>Reservations</option>
                         <option>Meetings</option>
@@ -37,7 +37,7 @@
                     <div class="form-group">
                       <label>Email</label>
                       <input type="text" formControlName="email" class="form-control input-rounded" placeholder="name@ParkViewHotel.com"
-                        [ngClass]="{ 'is-invalid': submitted && func.email.errors }" />
+                        [ngClass]="{ 'is-invalid': submitted && func.email.errors }"  />
                       <div *ngIf="submitted && func.email.errors" class="invalid-feedback">
                         <div *ngIf="func.email.errors.required">Email is required</div>
                         <div *ngIf="func.email.errors.email">Email must be a valid email address</div>
@@ -48,7 +48,7 @@
                     <div class="form-group">
                       <label>Message</label>
                       <input style="height:90px" formControlName="message" placeholder="Please enter your message"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && func.message.errors }" />
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && func.message.errors }"  />
                       <div *ngIf="submitted && func.message.errors" class="invalid-feedback">
                         <div *ngIf="func.message.errors.required">Please enter your message.</div>
                       </div>
@@ -56,7 +56,7 @@
               
                     <!--Submit Button-->
                     <div class="form-group">
-                      <button class="btn btn-outline-secondary btn-rounded" onclick="onClick()">Submit</button>
+                      <button class="btn btn-outline-secondary btn-rounded">Submit</button>
                     </div>
                   </form>
           </div>
