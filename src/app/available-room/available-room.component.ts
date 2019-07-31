@@ -1,7 +1,7 @@
 // William Devine
 // Import all required libraries.
 import { Component, OnInit } from '@angular/core';
-import { AvaliableRoomServiceService } from '../avaliable-room-service.service';
+import { AvaliableRoomServiceService } from '../models/avaliable-room-service.service';
 import { AvailableRoom } from '../shared/available-room.model';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { AvaliableRoomService } from '../models/avaliable-room.service';

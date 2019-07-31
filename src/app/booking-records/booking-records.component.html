@@ -26,20 +26,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center" *ngFor="let hbooking of bookingHistory">
-                                <td>{{ hbooking.referenceNumber }}</td>
-                                <td>{{ hbooking.date }}</td>
-                                <td>{{ hbooking.price | currency}}</td>
-                                <td>{{ hbooking.points }}pts</td>
+                            <tr class="text-center" *ngFor="let hbooking of history; let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ hbooking['date'] }}</td>
+                                <td>{{ hbooking['price'] | currency}}</td>
+                                <td>{{ hbooking['points'] }}pts</td>
                                 <td>
                                     <a href="assets/pdf/receipt.pdf" download><button class="btn btn-outline-secondary outline-button-blue"  href="/assets/pdf/receipt.pdf" download >View</button></a>
                                 </td>
                                 <td>
-                                    <button (click)="sendMail()"class="btn btn-outline-secondary outline-button-blue">Mail Receipt</button>
+                                    <button (click)="sendMail(hbooking['email'])"class="btn btn-outline-secondary outline-button-blue">Mail Receipt</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <div>
+                    <p class="text-center">{{history_message}}</p>
+                    </div>
                 </div>
                 <div id="upcomingTab" class="mt-5" *ngIf="show" >
                     <h4 class="text-center title-bold">Upcoming Bookings</h4>
@@ -50,22 +53,28 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Number of Nights</th>
+                                <th scope="col">Check In</th>
                                 <th scope="col">Cancel Booking</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center" *ngFor="let ubooking of upcomingBookings; let i = index" [attr.data-index]="i">
-                              <td>{{ ubooking.referenceNumber }}</td>
-                                <td>{{ ubooking.date }}</td>
-                                <td>{{ ubooking.price | currency}}</td>
-                                <td>{{ ubooking.nights }}</td>
+                            <tr class="text-center" *ngFor="let ubooking of upcoming; let i = index" [attr.data-index]="i">
+                              <td>{{ i+1}}</td>
+                                <td>{{ ubooking['date'] }}</td>
+                                <td>{{ ubooking['price'] | currency}}</td>
+                                <td>{{ ubooking['nights'] }}</td>
                                 <td>
-                                    <button [disabled]="ubooking.status" [ngClass]="ubooking.status?'btn btn-default text-danger disabled':'btn btn-danger'"  (click)="cancel(ubooking,i)">{{ubooking.status?'Cancelled':'Cancel'}}</button>
+                                    <button class="btn btn-secondary button-blue" (click)="checkIn(ubooking['id'])">Check In</button>
+                                </td>
+                                <td>
+                                    <button [disabled]="ubooking.status" [ngClass]="ubooking.status?'btn btn-default text-danger disabled':'btn btn-danger'"  (click)="cancel(ubooking['id'],i)">{{ubooking.status?'Cancelled':'Cancel'}}</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <p class="text-center">{{upcoming_message}}</p>
                 </div>
+
             </div>
 
         </div>

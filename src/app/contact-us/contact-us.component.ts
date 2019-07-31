@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FeedbackService } from '../feedback.service';
+import { FeedbackService } from '../models/feedback.service';
 
 @Component({
   selector: 'app-contact-us',

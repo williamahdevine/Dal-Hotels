@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../models/auth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',

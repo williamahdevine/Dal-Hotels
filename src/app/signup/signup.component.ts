@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignUpService } from '../models/sign-up.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../models/auth.service';
 
 
 @Component({

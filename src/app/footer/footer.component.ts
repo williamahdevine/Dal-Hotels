@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { FeedbackService } from '../feedback.service';
+import { AuthService } from '../models/auth.service';
+import { FeedbackService } from '../models/feedback.service';
 
 @Component({
   selector: 'app-footer',

@@ -11,14 +11,18 @@
                                 <th scope="col">Room Type</th>
                                 <th scope="col">Room Cost</th>
                                 <th scope="col">Number of Nights</th>
+                                <th scope="col">Check In Date</th>
+                                <th scope="col">Number Of Guests</th>
                                 <th scope="col" class="text-center">Action</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let Broom of RoomViews" id="{{Broom['id']}}">
+                              <tr *ngFor="let Broom of RoomViews; let i = index" id="{{Broom['id']}}">
                                 <td>{{Broom["beds"]}} Beds</td>
                                 <td>{{Broom["cost"]}}</td>
                                 <td><input type="number" [(ngModel)]="nightArray[Broom['id']]" class="form-control cost" /></td>
+                                <td><input type="date" name="checkInTime" [value]="startDate" [(ngModel)]="Broom['date']" [min]="startDate" [max]="endDate" (ngModelChange)="dateChecker(Broom['date'],i)"></td>
+                                <td><input type="number" [(ngModel)]="Broom['no_of_guests']" class="form-control cost" /></td>
                                 <td><button class="btn btn-danger btn-rounded" (click)="CancelBooking(Broom['id'])">Cancel Booking</button></td>
                                 <td></td>
                               </tr>
@@ -27,7 +31,7 @@
                                     <!--<button class="btn btn-success btn-rounded pay-btn" data-toggle="modal" data-target="#exampleModal">Pay</button>-->
                                     <div id="paypal-button"></div>
                                     </td>
-                                    <td class="text-left" colspan="2">
+                                    <td class="text-left" colspan="3">
                                     <button class="btn btn-outline-secondary btn-rounded pay-btn" (click)="payOnCheckIn()">Pay on Check In</button>
                                     <button class="btn btn-secondary btn-rounded pay-btn" (click)="Redeemed()">{{RedeemedStatus}}</button></td>
                                     <td class="text-right"><strong>Total Cost:${{totalBookingCost()}}</strong></td>

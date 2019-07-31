@@ -8,7 +8,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Feedback } from '../shared/feedback';
 import { AngularFirestore ,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../models/auth.service';
 
 
 @Component({

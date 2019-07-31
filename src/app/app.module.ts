@@ -13,7 +13,7 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
-import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+import { ConfirmEqualValidatorDirective } from './models/confirm-equal-validator.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';

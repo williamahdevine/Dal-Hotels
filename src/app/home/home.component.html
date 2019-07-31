@@ -70,7 +70,7 @@
                     <div class="row">
                         <div  class="col-sm-6 text-center" *ngFor="let room of objectKeys(rooms) ; let i = index">
                         {{hasResult()}}
-                            <img src="{{roomcount[i]}}" class="img-rooms-responsive img-rounded grow" />
+                            <img routerLink="/room-detail" routerLinkActive="active" (click)="viewDetails(i)" src="{{roomcount[i]}}" class="img-rooms-responsive img-rounded grow" />
                             <h6 class="title-bold text-center room-header">Room Type: {{rooms[room].beds}} beds</h6>
                             <p class="small"><strong>Cost:</strong> {{rooms[room].cost | currency}} Per Night</p>
                             <div class="text-center">
