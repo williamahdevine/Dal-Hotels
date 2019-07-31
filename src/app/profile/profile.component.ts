@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../models/user.service';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../models/auth.service';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {Observable, Subscription} from 'rxjs';
 import {SignUpService} from '../models/sign-up.service';

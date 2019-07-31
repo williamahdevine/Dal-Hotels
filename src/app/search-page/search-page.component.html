@@ -21,7 +21,7 @@
                               <img *ngFor="let star of range(rooms[room].ratings)" src="assets/images/icons/star.svg" class="img-star" alt="star" width="20" height="20" /> 
                           </div>
                             <div class="text-center">
-                                <button routerLink="/room-detail" routerLinkActive="active" class="btn btn-outline-secondary btn-rounded btn-room" ng-click="viewDetails(rooms[room].number)">View Details</button>
+                                <button routerLink="/room-detail" routerLinkActive="active" class="btn btn-outline-secondary btn-rounded btn-room" (click)="viewDetails(i)">View Details</button>
                                 <button [routerLink]="['/bookings', room]" routerLinkActive="active"  class="btn btn-primary btn-rounded btn-room">Book Now</button>
                             </div>
                         </div>

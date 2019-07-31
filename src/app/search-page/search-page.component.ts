@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AvaliableRoomServiceService } from '../models/avaliable-room-service.service';
 import { RoomSearchService } from '../models/room-search.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class SearchPageComponent implements OnInit {
   checked = true;
   roomcount = [];
   count = 0;
-  constructor(private roomSearch: RoomSearchService ) { }
+  constructor(private roomSearch: RoomSearchService,private service: AvaliableRoomServiceService ) { }
 
 
   ngOnInit() {
@@ -45,5 +45,9 @@ export class SearchPageComponent implements OnInit {
       result.push("");
     }
     return result;
+  }
+
+  viewDetails(i) {
+    this.service.viewDetails(i, '5f31RvF6LKJCghBQJnPT');
   }
 }

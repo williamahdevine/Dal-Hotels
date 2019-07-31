@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AvaliableRoomServiceService } from '../models/avaliable-room-service.service';
 import { RoomSearchService } from '../models/room-search.service';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 // Student Name: Agbola Iseoluwatobi
 // Student ID: B00802526
   // the constructor sets the Room Search Service
-  constructor(public search: RoomSearchService, public router: Router) { }
+  constructor(public search: RoomSearchService, public router: Router,private service: AvaliableRoomServiceService ) { }
   // The variables are set
   public rooms = [];
   objectKeys = Object.keys;
@@ -120,5 +120,10 @@ export class HomeComponent implements OnInit {
     const num = Math.floor(Math.random() * 6) + 1;
     this.roomcount[this.count] = '../../assets/images/room/' + '' + num + '.jpg';
     this.count = this.count + 1;
+  }
+
+  viewDetails(i) {
+    console.log(i);
+    this.service.viewDetails(i, '5f31RvF6LKJCghBQJnPT');
   }
 }
